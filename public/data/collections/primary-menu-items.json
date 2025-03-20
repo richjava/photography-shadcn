@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "_id": "primary-menu-item-FT9nIrRRe7",
+      "_type": "primaryMenuItem",
+      "slug": "weddings",
+      "label": "Weddings",
+      "url": "/weddings"
+    },
+    {
+      "_id": "primarymenuitem-WGc6UZKaE",
+      "_type": "primaryMenuItem",
+      "label": "Portraits",
+      "url": "/portraits",
+      "slug": "portraits"
+    },
+    {
+      "_id": "primarymenuitem-WGc6UZKaEF",
+      "_type": "primaryMenuItem",
+      "label": "Projects",
+      "url": "/projects",
+      "slug": "projects"
+    }
+  ]
+}

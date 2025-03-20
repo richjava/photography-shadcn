@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "name": "Essential",
+      "slug": "portraits-essential",
+      "category": "Portraits",
+      "price": "$299",
+      "features": [
+        "1-hour session",
+        "1 location",
+        "10 edited digital images",
+        "Online gallery"
+      ]
+    },
+    {
+      "name": "Premium",
+      "slug": "portraits-premium",
+      "category": "Portraits",
+      "price": "$499",
+      "isPopular": true,
+      "features": [
+        "2-hour session",
+        "2 locations",
+        "25 edited digital images",
+        "Online gallery",
+        "Outfit changes"
+      ]
+    },
+    {
+      "name": "Essential",
+      "slug": "weddings-essential",
+      "category": "Weddings",
+      "price": "$2,999",
+      "features": [
+        "6 hours of coverage",
+        "300+ edited images",
+        "Engagement session",
+        "Online gallery"
+      ]
+    },
+    {
+      "name": "Premium",
+      "slug": "weddings-premium",
+      "category": "Weddings",
+      "price": "$4,999",
+      "isPopular": true,
+      "features": [
+        "8 hours of coverage",
+        "500+ edited images",
+        "Engagement session",
+        "Online gallery",
+        "Wedding album",
+        "Second day coverage"
+      ]
+    },
+    {
+      "name": "Luxury",
+      "slug": "weddings-luxury",
+      "category": "Weddings",
+      "price": "$7,999",
+      "features": [
+        "Full day coverage",
+        "800+ edited images",
+        "Engagement session",
+        "Online gallery",
+        "Luxury wedding album",
+        "Parent albums",
+        "Rehersal coverage",
+        "Customized timeline",
+        "Drone coverage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1672 @@
+{
+  "contentTypes": [
+    {
+      "name": "primaryMenuItem",
+      "fields": {
+        "slug": {
+          "type": "uid",
+          "targetField": "label",
+          "required": true
+        },
+        "label": {
+          "type": "string",
+          "required": true
+        },
+        "url": {
+          "type": "string",
+          "unique": true,
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "photo",
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "image": {
+          "type": "image"
+        },
+        "category": {
+          "type": "enumeration",
+          "values": [
+            "Landscapes",
+            "Portraits",
+            "Weddings",
+            "Architecture",
+            "Street Photography"
+          ]
+        }
+      }
+    },
+    {
+      "name": "project",
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "photos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "photo"
+        },
+        "coverPhoto": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "photo"
+        },
+        "category": {
+          "type": "enumeration",
+          "values": [
+            "Portrait Series",
+            "Landscapes",
+            "Street Photography",
+            "Architecture"
+          ]
+        }
+      }
+    },
+    {
+      "name": "process",
+      "dataPosition": 3,
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "phases": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "phase"
+        }
+      }
+    },
+    {
+      "name": "phase",
+      "dataPosition": 2,
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "steps": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "step"
+        },
+        "category": {
+          "type": "enumeration",
+          "values": [
+            "Weddings",
+            "Portraits"
+          ]
+        }
+      }
+    },
+    {
+      "name": "step",
+      "dataPosition": 1,
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "icon": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "story",
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "location": {
+          "type": "string",
+          "required": false
+        },
+        "style": {
+          "type": "string",
+          "required": false
+        },
+        "photos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "photo"
+        },
+        "category": {
+          "type": "enumeration",
+          "values": [
+            "Weddings",
+            "Portraits"
+          ]
+        }
+      }
+    },
+    {
+      "name": "profile",
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "name",
+          "required": true
+        },
+        "image": {
+          "type": "string",
+          "required": true
+        },
+        "quote": {
+          "type": "text"
+        },
+        "bio": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "pricingPackage",
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "name",
+          "required": true
+        },
+        "category": {
+          "type": "enumeration",
+          "values": [
+            "Weddings",
+            "Portraits"
+          ]
+        },
+        "price": {
+          "type": "string",
+          "required": true
+        },
+        "isPopular": {
+          "type": "boolean"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "service",
+      "fields": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "image": {
+          "type": "image"
+        },
+        "cta": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "title": "Label",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "title": "Url",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "home",
+      "demoSections": [
+        {
+          "name": "homeSeo"
+        },
+        {
+          "name": "hero"
+        },
+        {
+          "name": "about"
+        },
+        {
+          "name": "services"
+        }
+      ]
+    },
+    {
+      "name": "weddings",
+      "demoSections": [
+        {
+          "name": "weddingsSeo"
+        },
+        {
+          "name": "weddingsBanner"
+        },
+        {
+          "name": "weddingsGalleryCTA"
+        },
+        {
+          "name": "weddingsProcess"
+        },
+        {
+          "name": "weddingsPricing"
+        }
+      ]
+    },
+    {
+      "name": "portraits",
+      "demoSections": [
+        {
+          "name": "portraitsSeo"
+        },
+        {
+          "name": "portraitsBanner"
+        },
+        {
+          "name": "portraitsGalleryCTA"
+        },
+        {
+          "name": "portraitsProcess"
+        },
+        {
+          "name": "portraitsPricing"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "demoSections": [
+        {
+          "name": "contactSeo"
+        },
+        {
+          "name": "contactLanding"
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "demoSections": [
+        {
+          "name": "projectsSeo"
+        },
+        {
+          "name": "gallery"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "name": "header",
+      "title": "Header",
+      "description": "Main navigation header with logo and menu items.",
+      "collections": {
+        "primaryMenuItem": {}
+      },
+      "templates": [
+        "header1"
+      ],
+      "type": "layout",
+      "defaultTemplate": {
+        "name": "header1"
+      }
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "description": "Site footer with copyright information.",
+      "templates": [
+        "footer1"
+      ],
+      "type": "layout",
+      "defaultTemplate": {
+        "name": "footer1"
+      }
+    },
+    {
+      "name": "homeSeo",
+      "title": "Home SEO",
+      "data": {
+        "pageTitle": "Jane Doe Photography | Wedding & Portrait Photographer",
+        "description": "New York-based photographer specializing in wedding photography, intimate portraits, and creative personal projects. Capturing life's beautiful moments with a natural, authentic style.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "hero",
+      "title": "Home Hero",
+      "description": "The main landing section of the home page",
+      "data": {
+        "title": "Jane Doe",
+        "subtitle": "Professional Photographer",
+        "backgroundImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": [
+        "hero1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "hero1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203378/hero-min_dy7eow.png"
+    },
+    {
+      "name": "about",
+      "title": "About Section",
+      "description": "About the photographer section",
+      "data": {
+        "name": "Jane",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5"
+        },
+        "quote": "Photography is not just about capturing moments; it's about preserving feelings, emotions, and stories that deserve to be remembered.",
+        "bio": [
+          "I've been fortunate to turn my passion for photography into a journey of capturing life's most precious moments. What started with a simple camera and endless curiosity has evolved into a deep love for visual storytelling.",
+          "Based in New York but always eager to travel, I specialize in wedding photography, intimate portraits, and creative personal projects. My style blends candid photojournalism with artistic composition, always focusing on authentic emotions and natural beauty.",
+          "When I'm not behind the camera, you'll find me exploring hidden city corners, experimenting with film photography, or sharing my knowledge through photography workshops. Every shoot is an opportunity to create something unique and meaningful."
+        ],
+        "buttonLinks": [
+          {
+            "label": "Work with me",
+            "url": "/contact",
+            "type": "primary"
+          },
+          {
+            "label": "View my projects",
+            "url": "/projects",
+            "type": "secondary"
+          }
+        ]
+      },
+      "templates": [
+        "about1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "about1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/about-min_wjyip4.png"
+    },
+    {
+      "name": "services",
+      "title": "Services Section",
+      "description": "Photography services offered",
+      "data": {
+        "title": "Capture Your Story",
+        "description": "Whether you're planning your dream wedding or looking to create stunning portraits, I'm here to help you preserve these precious moments."
+      },
+      "templates": [
+        "services1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "services1"
+      },
+      "collections": {
+        "service": {}
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
+    },
+    {
+      "name": "weddingsSeo",
+      "title": "Weddings SEO",
+      "data": {
+        "pageTitle": "Weddings Photography | Jane Doe Photography",
+        "description": "Professional wedding photography in New York. Capturing authentic moments and genuine expressions in natural and studio settings.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "weddingsBanner",
+      "title": "Weddings Banner",
+      "description": "Photography services offered",
+      "data": {
+        "title": "Capture Your Story",
+        "description": "Whether you're planning your dream wedding or looking to create stunning portraits, I'm here to help you preserve these precious moments."
+      },
+      "templates": [
+        "banner1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "banner1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/weddings-banner-min_kna61p.png"
+    },
+    {
+      "name": "weddingsGalleryCTA",
+      "title": "Weddings Gallery CTA",
+      "description": "Wedding gallery CTA section",
+      "templates": [
+        "galleryCTA1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "galleryCTA1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/weddings-gallery-cta-min_vvq7jk.png",
+      "collections": {
+        "story": {
+          "config": {
+            "limit": 1,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Weddings"
+              }
+            ],
+            "populate": [
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "weddingsProcess",
+      "title": "Weddings Process",
+      "description": "Photography services offered",
+      "data": {
+        "title": "The Journey Together",
+        "description": "From our first meeting to the delivery of your final gallery, I'm here to ensure your wedding photography experience is as beautiful as the moments we capture.",
+        "ctaText": "Let's Start Your Journey",
+        "ctaLink": "/contact"
+      },
+      "collections": {
+        "phase": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Weddings"
+              }
+            ],
+            "populate": [
+              {
+                "name": "steps",
+                "type": "step"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "process1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "process1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
+    },
+    {
+      "name": "portraitsSeo",
+      "title": "Portraits SEO",
+      "data": {
+        "pageTitle": "Portrait Photography | Jane Doe Photography",
+        "description": "Professional portrait photography in New York. Capturing authentic moments and genuine expressions in natural and studio settings.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "portraitsBanner",
+      "title": "Portraits Banner",
+      "description": "Banner section for the portraits page",
+      "data": {
+        "title": "The Art of Portraiture",
+        "description": "Every portrait session is an opportunity to capture the essence of who you are. Whether it's for professional headshots, family portraits, or creative personal projects, I focus on creating images that reflect your authentic self while maintaining artistic excellence."
+      },
+      "templates": [
+        "banner1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "banner1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+    },
+    {
+      "name": "portraitsGalleryCTA",
+      "title": "Portraits Gallery CTA",
+      "description": "Gallery CTA section for portrait photography",
+      "templates": [
+        "galleryCTA1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "galleryCTA1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/portraits-gallery-cta_w283ow.png",
+      "collections": {
+        "story": {
+          "config": {
+            "limit": 1,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Portraits"
+              }
+            ],
+            "populate": [
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "portraitsProcess",
+      "title": "Portraits Process",
+      "description": "Photography services offered for portraits",
+      "data": {
+        "title": "The Portrait Experience",
+        "description": "From our first conversation to the delivery of your final images, I ensure every step of your portrait experience is thoughtfully crafted and enjoyable.",
+        "ctaText": "Book Your Portrait Session",
+        "ctaLink": "/contact"
+      },
+      "collections": {
+        "phase": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Portraits"
+              }
+            ],
+            "populate": [
+              {
+                "name": "steps",
+                "type": "step"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "process1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "process1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203385/portraits-process-min_sns05i.png"
+    },
+    {
+      "name": "contactSeo",
+      "title": "Contact SEO",
+      "data": {
+        "pageTitle": "Contact | Jane Doe Photography",
+        "description": "Contact page for New York-based photographer Jane Doe specializing in wedding photography, and intimate portraits.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "contactLanding",
+      "title": "Contact Landing",
+      "description": "Contact landing section with a form",
+      "data": {
+        "backgroundImage": {
+          "url": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&q=80"
+        },
+        "title": "Let's Create Something Beautiful Together",
+        "description": "I'm always excited to discuss new photography projects, whether it's capturing your special moments or creating stunning visuals for your brand. Let's connect and bring your vision to life.",
+        "phone": "021 1234 1234",
+        "email": "jane@janedoephotography.com",
+        "location": "New York",
+        "businessHours": "By Appointment",
+        "formTitle": "Send Me a Message"
+      },
+      "templates": [
+        "contactLanding1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "contactLanding1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203837/contact-landing-min_gzraky.png"
+    },
+    {
+      "name": "portraitsPricing",
+      "title": "Portraits Pricing",
+      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "data": {
+        "title": "Portrait Session Packages",
+        "description": "Choose the perfect package for your portrait needs. All packages include professional editing and high-resolution digital images."
+      },
+      "collections": {
+        "pricingPackage": {
+          "config": {
+            "limit": 2,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Portraits"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "pricing1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "pricing1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203386/portraits-pricing-min_qmuayl.png"
+    },
+    {
+      "name": "weddingsPricing",
+      "title": "Weddings Pricing",
+      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "data": {
+        "title": "Wedding Session Packages",
+        "description": "Choose the perfect package for your wedding needs. All packages include professional editing and high-resolution digital images."
+      },
+      "collections": {
+        "pricingPackage": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Weddings"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "pricing1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "pricing1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+    },
+    {
+      "name": "projectsSeo",
+      "title": "Projects SEO",
+      "data": {
+        "pageTitle": "Projects | Jane Doe Photography | Personal & professional projects",
+        "description": "Photographic projects by New York-based photographer Jane Doe specializing in wedding photography, and intimate portraits.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "projectsSeo",
+      "title": "Projects SEO",
+      "data": {
+        "pageTitle": "Jane Doe Photography | Wedding & Portrait Photographer | ",
+        "description": "Photographer specializing in wedding photography, intimate portraits, and creative personal projects. Capturing life's beautiful moments with a natural, authentic style.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "gallery",
+      "title": "Gallery",
+      "description": "Gallery of photographic projects",
+      "templates": [
+        "projects"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "projects"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742204128/gallery-min_cxra5z.png",
+      "collections": {
+        "project": {
+          "config": {
+            "populate": [
+              {
+                "name": "coverPhoto",
+                "type": "photo"
+              },
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "templates": [
+    {
+      "name": "header1",
+      "title": "Header 1",
+      "category": "headers",
+      "description": "Simple header with justified logo and nav links."
+    },
+    {
+      "name": "footer1",
+      "title": "Footer 1",
+      "category": "footers",
+      "description": "Simple footer with centered content and social links."
+    },
+    {
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
+    },
+    {
+      "name": "hero1",
+      "title": "Hero 1",
+      "category": "covers",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Full viewport hero with centered text and background image.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203378/hero-min_dy7eow.png"
+    },
+    {
+      "name": "about1",
+      "title": "About 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Two-column about section with image, quote, and biography.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/about-min_wjyip4.png"
+    },
+    {
+      "name": "services1",
+      "title": "Services 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Two-column services grid with images and call-to-action buttons.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
+    },
+    {
+      "name": "banner1",
+      "title": "Banner 1",
+      "category": "banners",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Introduction banner with title, subtitle, and description.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+    },
+    {
+      "name": "galleryCTA1",
+      "title": "Gallery CTA",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Masonry gallery with category filtering and image modal.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/weddings-gallery-cta-min_vvq7jk.png"
+    },
+    {
+      "name": "process1",
+      "title": "Process 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Process section with title, description, and steps.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
+    },
+    {
+      "name": "portraits-pricing1",
+      "title": "Portraits Pricing 1",
+      "category": "pricing",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Pricing packages display for portrait photography services.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202912/portraits-process_b3szlp.png"
+    },
+    {
+      "name": "contactLanding1",
+      "title": "Contact Landing 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Contact landing section with a form",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203837/contact-landing-min_gzraky.png"
+    },
+    {
+      "name": "pricing1",
+      "title": "Pricing 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Pricing packages display for services.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+    },
+    {
+      "name": "projects",
+      "title": "Projects 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Gallery section for photographic projects.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742204128/gallery-min_cxra5z.png"
+    },
+    {
+      "name": "header1",
+      "title": "Header 1",
+      "category": "headers",
+      "description": "Simple header with justified logo and nav links."
+    },
+    {
+      "name": "footer1",
+      "title": "Footer 1",
+      "category": "footers",
+      "description": "Simple footer with centered content and social links."
+    },
+    {
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
+    },
+    {
+      "name": "hero1",
+      "title": "Hero 1",
+      "category": "covers",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Full viewport hero with centered text and background image.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203378/hero-min_dy7eow.png"
+    },
+    {
+      "name": "about1",
+      "title": "About 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Two-column about section with image, quote, and biography.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/about-min_wjyip4.png"
+    },
+    {
+      "name": "services1",
+      "title": "Services 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Two-column services grid with images and call-to-action buttons.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
+    },
+    {
+      "name": "banner1",
+      "title": "Banner 1",
+      "category": "banners",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Introduction banner with title, subtitle, and description.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+    },
+    {
+      "name": "galleryCTA1",
+      "title": "Gallery CTA",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Masonry gallery with category filtering and image modal.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/weddings-gallery-cta-min_vvq7jk.png"
+    },
+    {
+      "name": "process1",
+      "title": "Process 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Process section with title, description, and steps.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
+    },
+    {
+      "name": "portraits-pricing1",
+      "title": "Portraits Pricing 1",
+      "category": "pricing",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Pricing packages display for portrait photography services.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202912/portraits-process_b3szlp.png"
+    },
+    {
+      "name": "contactLanding1",
+      "title": "Contact Landing 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Contact landing section with a form",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203837/contact-landing-min_gzraky.png"
+    },
+    {
+      "name": "pricing1",
+      "title": "Pricing 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Pricing packages display for services.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+    },
+    {
+      "name": "projects",
+      "title": "Projects 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Gallery section for photographic projects.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742204128/gallery-min_cxra5z.png"
+    }
+  ],
+  "layout": {
+    "contentIndex": 1,
+    "sections": [
+      {
+        "name": "header"
+      },
+      {
+        "name": "footer"
+      }
+    ]
+  },
+  "collections": {
+    "phases": [
+      {
+        "_id": "wedding-phase-1",
+        "title": "Before the Wedding",
+        "steps": [
+          "wedding-step-1",
+          "wedding-step-2",
+          "wedding-step-3"
+        ],
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-phase-2",
+        "title": "During the Wedding",
+        "steps": [
+          "wedding-step-4",
+          "wedding-step-5",
+          "wedding-step-6"
+        ],
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-phase-3",
+        "title": "After the Wedding",
+        "steps": [
+          "wedding-step-7",
+          "wedding-step-8",
+          "wedding-step-9"
+        ],
+        "category": "Weddings"
+      },
+      {
+        "_id": "portrait-phase-1",
+        "title": "Before the Session",
+        "steps": [
+          "portrait-step-1",
+          "portrait-step-2",
+          "portrait-step-3"
+        ],
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-phase-2",
+        "title": "During the Session",
+        "steps": [
+          "portrait-step-4",
+          "portrait-step-5",
+          "portrait-step-6"
+        ],
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-phase-3",
+        "title": "After the Session",
+        "steps": [
+          "portrait-step-7",
+          "portrait-step-8",
+          "portrait-step-9"
+        ],
+        "category": "Portraits"
+      }
+    ],
+    "photos": [
+      {
+        "_id": "portrait-1",
+        "_type": "photo",
+        "title": "Portrait 1",
+        "description": "Description of portrait 1",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+        },
+        "category": "Portraits",
+        "slug": "portrait-1"
+      },
+      {
+        "_id": "portrait-2",
+        "_type": "photo",
+        "title": "Portrait 2",
+        "description": "Description of portrait 2",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04"
+        },
+        "category": "Portraits",
+        "slug": "portrait-2"
+      },
+      {
+        "_id": "portrait-3",
+        "_type": "photo",
+        "title": "Portrait 3",
+        "description": "Description of portait 3",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+        },
+        "category": "Portraits",
+        "slug": "portrait-3"
+      },
+      {
+        "_id": "portrait-4",
+        "_type": "photo",
+        "title": "Portrait 4",
+        "description": "Description of portrait 4",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+        },
+        "category": "Portraits",
+        "slug": "portrait-4"
+      },
+      {
+        "_id": "wedding-1",
+        "_type": "photo",
+        "title": "Wedding 1",
+        "description": "Description of wedding 1",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80"
+        },
+        "category": "Weddings",
+        "slug": "wedding-1"
+      },
+      {
+        "_id": "wedding-2",
+        "_type": "photo",
+        "title": "Wedding 2",
+        "description": "Description of wedding 2",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1523974715800-1f7cef033969?auto=format&fit=crop&q=80"
+        },
+        "category": "Weddings",
+        "slug": "wedding-2"
+      },
+      {
+        "_id": "wedding-3",
+        "_type": "photo",
+        "title": "Wedding 3",
+        "description": "Description of wedding 3",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1612438115954-ae5a72df09eb?auto=format&fit=crop&q=80"
+        },
+        "category": "Weddings",
+        "slug": "wedding-3"
+      },
+      {
+        "_id": "wedding-4",
+        "_type": "photo",
+        "title": "Wedding 4",
+        "description": "Description of wedding 4",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80"
+        },
+        "category": "Weddings",
+        "slug": "wedding-4"
+      },
+      {
+        "_id": "architecture-1",
+        "_type": "photo",
+        "title": "Architecture 1",
+        "description": "Description of architecture 1",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2"
+        },
+        "category": "Architecture",
+        "slug": "architecture-1"
+      },
+      {
+        "_id": "architecture-2",
+        "_type": "photo",
+        "title": "Architecture 2",
+        "description": "Description of architecture 2",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1496307653780-42ee777d4833"
+        },
+        "category": "Architecture",
+        "slug": "architecture-2"
+      },
+      {
+        "_id": "architecture-3",
+        "_type": "photo",
+        "title": "Architecture 3",
+        "description": "Description of architecture 3",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2"
+        },
+        "category": "Architecture",
+        "slug": "architecture-3"
+      },
+      {
+        "_id": "landscape-1",
+        "_type": "photo",
+        "title": "Landscape 1",
+        "description": "Description of Landscape 1",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        },
+        "category": "Landscapes",
+        "slug": "landscape-1"
+      },
+      {
+        "_id": "street-1",
+        "_type": "photo",
+        "title": "Street 1",
+        "description": "Description of street photo 1",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1517732306149-e8f829eb588a"
+        },
+        "category": "Street Photography",
+        "slug": "street-1"
+      },
+      {
+        "_id": "street-2",
+        "_type": "photo",
+        "title": "Street 2",
+        "description": "Description of street photo 2",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1517404215738-15263e9f9178"
+        },
+        "category": "Street Photography",
+        "slug": "street-2"
+      },
+      {
+        "_id": "street-3",
+        "_type": "photo",
+        "title": "Street 3",
+        "description": "Description of street photo 3",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f"
+        },
+        "category": "Street Photography",
+        "slug": "street-3"
+      },
+      {
+        "_id": "street-4",
+        "_type": "photo",
+        "title": "Street 4",
+        "description": "Description of street photo 4",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f"
+        },
+        "category": "Street Photography",
+        "slug": "street-4"
+      }
+    ],
+    "pricingPackages": [
+      {
+        "name": "Essential",
+        "slug": "portraits-essential",
+        "category": "Portraits",
+        "price": "$299",
+        "features": [
+          "1-hour session",
+          "1 location",
+          "10 edited digital images",
+          "Online gallery"
+        ]
+      },
+      {
+        "name": "Premium",
+        "slug": "portraits-premium",
+        "category": "Portraits",
+        "price": "$499",
+        "isPopular": true,
+        "features": [
+          "2-hour session",
+          "2 locations",
+          "25 edited digital images",
+          "Online gallery",
+          "Outfit changes"
+        ]
+      },
+      {
+        "name": "Essential",
+        "slug": "weddings-essential",
+        "category": "Weddings",
+        "price": "$2,999",
+        "features": [
+          "6 hours of coverage",
+          "300+ edited images",
+          "Engagement session",
+          "Online gallery"
+        ]
+      },
+      {
+        "name": "Premium",
+        "slug": "weddings-premium",
+        "category": "Weddings",
+        "price": "$4,999",
+        "isPopular": true,
+        "features": [
+          "8 hours of coverage",
+          "500+ edited images",
+          "Engagement session",
+          "Online gallery",
+          "Wedding album",
+          "Second day coverage"
+        ]
+      },
+      {
+        "name": "Luxury",
+        "slug": "weddings-luxury",
+        "category": "Weddings",
+        "price": "$7,999",
+        "features": [
+          "Full day coverage",
+          "800+ edited images",
+          "Engagement session",
+          "Online gallery",
+          "Luxury wedding album",
+          "Parent albums",
+          "Rehersal coverage",
+          "Customized timeline",
+          "Drone coverage"
+        ]
+      }
+    ],
+    "primaryMenuItems": [
+      {
+        "_id": "primary-menu-item-FT9nIrRRe7",
+        "_type": "primaryMenuItem",
+        "slug": "weddings",
+        "label": "Weddings",
+        "url": "/weddings"
+      },
+      {
+        "_id": "primarymenuitem-WGc6UZKaE",
+        "_type": "primaryMenuItem",
+        "label": "Portraits",
+        "url": "/portraits",
+        "slug": "portraits"
+      },
+      {
+        "_id": "primarymenuitem-WGc6UZKaEF",
+        "_type": "primaryMenuItem",
+        "label": "Projects",
+        "url": "/projects",
+        "slug": "projects"
+      }
+    ],
+    "processes": [],
+    "profiles": [],
+    "projects": [
+      {
+        "_id": "project-1",
+        "_type": "project",
+        "title": "Natural Light Portraits",
+        "description": "Exploring the interplay of natural light and human expression in various outdoor settings.",
+        "slug": "natural-light-portraits",
+        "category": "Portrait Series",
+        "coverPhoto": "portrait-1",
+        "photos": [
+          "portrait-1",
+          "portrait-2",
+          "portrait-3",
+          "portrait-4"
+        ]
+      },
+      {
+        "_id": "project-2",
+        "_type": "project",
+        "title": "Urban Exploration",
+        "description": "A journey through the hidden corners of the city, capturing the untold stories of urban life.",
+        "category": "Street Photography",
+        "slug": "urban-exploration",
+        "coverPhoto": "street-1",
+        "photos": [
+          "street-1",
+          "street-2",
+          "street-3",
+          "street-4"
+        ]
+      },
+      {
+        "_id": "project-3",
+        "_type": "project",
+        "title": "Minimalist Architecture",
+        "description": "A study of clean lines and geometric patterns in modern architectural design.",
+        "category": "Architecture",
+        "slug": "minimalist-architecture",
+        "coverPhoto": "architecture-1",
+        "photos": [
+          "architecture-1",
+          "architecture-2",
+          "architecture-3"
+        ]
+      },
+      {
+        "_id": "project-4",
+        "_type": "project",
+        "title": "Wellington Landscapes",
+        "description": "A collection of landscapes from Wellington, New Zealand.",
+        "category": "Landscapes",
+        "slug": "wellington-landscapes",
+        "coverPhoto": "landscape-1",
+        "photos": [
+          "landscape-1"
+        ]
+      }
+    ],
+    "services": [
+      {
+        "title": "Wedding Photography",
+        "description": "From intimate ceremonies to grand celebrations, I'll be there to document every precious moment of your special day.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866",
+          "alt": "Wedding Photography"
+        },
+        "cta": {
+          "label": "Plan Your Wedding",
+          "url": "/weddings"
+        }
+      },
+      {
+        "title": "Portrait Photography",
+        "description": "Professional headshots, family portraits, or creative personal sessions - let's create images that reflect your authentic self.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "alt": "Portrait Photography"
+        },
+        "cta": {
+          "label": "Book a Session",
+          "url": "/portraits"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "_id": "wedding-step-1",
+        "icon": "message",
+        "title": "Initial Consultation",
+        "description": "We'll meet to discuss your vision, style preferences, and wedding details. This helps me understand how to best tell your story.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-2",
+        "icon": "calendar",
+        "title": "Planning & Timeline",
+        "description": "I'll help create a photography timeline that ensures we capture all important moments while keeping your day flowing smoothly.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-3",
+        "icon": "camera",
+        "title": "Engagement Session",
+        "description": "A pre-wedding photo session helps us get comfortable working together and provides beautiful images for your save-the-dates.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-4",
+        "icon": "clock",
+        "title": "Timeline Management",
+        "description": "I'll work seamlessly with your other vendors to keep everything on schedule while capturing both planned and spontaneous moments.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-5",
+        "icon": "camera",
+        "title": "Photography Coverage",
+        "description": "From getting ready through to the last dance, I'll document all the big moments and the intimate details that make your day unique.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-6",
+        "icon": "heart",
+        "title": "Candid Moments",
+        "description": "While capturing the formal shots, I'll also be on the lookout for those natural, unscripted moments that tell your authentic story.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-7",
+        "icon": "image",
+        "title": "Image Selection",
+        "description": "I carefully select and edit the best images that tell the complete story of your day, ensuring each photo meets my high standards.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-8",
+        "icon": "heart",
+        "title": "Gallery Delivery",
+        "description": "Within 6-8 weeks, you'll receive your private online gallery of carefully curated and beautifully edited images.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "wedding-step-9",
+        "icon": "image",
+        "title": "Album Design",
+        "description": "We'll work together to design a premium wedding album that perfectly tells the story of your special day.",
+        "category": "Weddings"
+      },
+      {
+        "_id": "portrait-step-1",
+        "icon": "message",
+        "title": "Initial Consultation",
+        "description": "We'll discuss your vision, preferred style, and any specific requirements to ensure your portraits align with your expectations.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-2",
+        "icon": "palette",
+        "title": "Style Planning",
+        "description": "I'll guide you through outfit selections, location choices, and provide tips to help you feel confident and prepared.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-3",
+        "icon": "clock",
+        "title": "Session Preparation",
+        "description": "You'll receive a detailed guide with tips for preparing for your session, including timing, what to bring, and what to expect.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-4",
+        "icon": "heart",
+        "title": "Relaxed Environment",
+        "description": "I create a comfortable, fun atmosphere where you can be yourself, ensuring natural and authentic expressions.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-5",
+        "icon": "camera",
+        "title": "Professional Direction",
+        "description": "I'll guide you through poses and expressions while capturing both planned shots and candid moments.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-6",
+        "icon": "image",
+        "title": "Image Review",
+        "description": "We'll review shots throughout the session to ensure we're capturing your vision and make adjustments as needed.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-7",
+        "icon": "image",
+        "title": "Preview Gallery",
+        "description": "Within 48 hours, you'll receive a curated selection of preview images to get excited about your final gallery.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-8",
+        "icon": "palette",
+        "title": "Professional Editing",
+        "description": "Each selected image is carefully edited to enhance its natural beauty while maintaining authenticity.",
+        "category": "Portraits"
+      },
+      {
+        "_id": "portrait-step-9",
+        "icon": "heart",
+        "title": "Final Delivery",
+        "description": "Within 2 weeks, you'll receive your complete online gallery with all your beautifully edited images.",
+        "category": "Portraits"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Sarah & Michael's Coastal Wedding",
+        "description": "A breathtaking celebration at sunset, where modern elegance met coastal charm. The couple chose an intimate gathering of 80 guests, with a ceremony overlooking the Pacific Ocean. The day was filled with personal touches, from hand-written vows to a surprise performance by the bride for her groom.",
+        "category": "Weddings",
+        "location": "Wellington, New Zealand",
+        "style": "Modern Coastal",
+        "photos": [
+          "wedding-4",
+          "wedding-1",
+          "wedding-2",
+          "wedding-3"
+        ]
+      },
+      {
+        "title": "The Thompson Family - Autumn Portraits",
+        "description": "A cozy autumn afternoon spent capturing genuine moments with the Thompson family. From playful interactions between siblings to tender parent-child moments, this session celebrated the natural connections and joy within this family of four. The golden light and fall colors provided a perfect backdrop for their story.",
+        "category": "Portraits",
+        "location": "Wellington Botanic Gardens",
+        "style": "Natural & Candid",
+        "photos": [
+          "portrait-4",
+          "portrait-2",
+          "portrait-1",
+          "portrait-3"
+        ]
+      }
+    ]
+  },
+  "plugins": [],
+  "global": {
+    "name": "Jane Doe Photography"
+  }
+}

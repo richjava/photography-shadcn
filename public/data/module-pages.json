@@ -1,0 +1,66 @@
+{
+  "modulePages": [
+    {
+      "name": "homeBase",
+      "description": "Main home page layout",
+      "page": {
+        "name": "home"
+      },
+      "sections": [
+        { "name": "homeSeo", "position": 0 },
+        { "name": "hero", "position": 1 },
+        { "name": "about", "position": 2 },
+        { "name": "services", "position": 3 }
+      ]
+    },
+    {
+      "name": "weddingsBase",
+      "description": "Wedding photography page",
+      "page": {
+        "name": "weddings"
+      },
+      "sections": [
+        { "name": "weddingsSeo", "position": 0 },
+        { "name": "weddingsBanner", "position": 1 },
+        { "name": "weddingsGalleryCTA", "position": 2 },
+        { "name": "weddingsProcess", "position": 3 },
+        { "name": "weddingsPricing", "position": 4 }
+      ]
+    },
+    {
+      "name": "portraitsBase",
+      "description": "Portrait photography page",
+      "page": {
+        "name": "portraits"
+      },
+      "sections": [
+        { "name": "portraitsSeo", "position": 0 },
+        { "name": "portraitsBanner", "position": 1 },
+        { "name": "portraitsGalleryCTA", "position": 2 },
+        { "name": "portraitsProcess", "position": 3 },
+        { "name": "portraitsPricing", "position": 4 }
+      ]
+    },
+    {
+      "name": "contactBase",
+      "description": "Contact page",
+      "page": {
+        "name": "contact"
+      },
+      "sections": [
+        { "name": "contactSeo", "position": 0 },
+        { "name": "contactLanding", "position": 1 }
+      ]
+    },{
+      "name": "projectsBase",
+      "description": "Projects page",
+      "page": {
+        "name": "projects"
+      },
+      "sections": [
+        { "name": "projectsSeo", "position": 0 },
+        { "name": "gallery", "position": 1 }
+      ]
+    }
+  ]
+} 

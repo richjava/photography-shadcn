@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "_id": "wedding-phase-1",
+      "title": "Before the Wedding",
+      "steps": ["wedding-step-1", "wedding-step-2", "wedding-step-3"],
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-phase-2",
+      "title": "During the Wedding",
+      "steps": ["wedding-step-4", "wedding-step-5", "wedding-step-6"],
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-phase-3",
+      "title": "After the Wedding",
+      "steps": ["wedding-step-7", "wedding-step-8", "wedding-step-9"],
+      "category": "Weddings"
+    },
+
+    {
+      "_id": "portrait-phase-1",
+      "title": "Before the Session",
+      "steps": ["portrait-step-1", "portrait-step-2", "portrait-step-3"],
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-phase-2",
+      "title": "During the Session",
+      "steps": ["portrait-step-4", "portrait-step-5", "portrait-step-6"],
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-phase-3",
+      "title": "After the Session",
+      "steps": ["portrait-step-7", "portrait-step-8", "portrait-step-9"],
+      "category": "Portraits"
+    }
+  ]
+}

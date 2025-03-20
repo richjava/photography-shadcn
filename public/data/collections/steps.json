@@ -1,0 +1,135 @@
+{
+  "data": [
+    {
+      "_id": "wedding-step-1",
+      "icon": "message",
+      "title": "Initial Consultation",
+      "description": "We'll meet to discuss your vision, style preferences, and wedding details. This helps me understand how to best tell your story.",
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-step-2",
+      "icon": "calendar",
+      "title": "Planning & Timeline",
+      "description": "I'll help create a photography timeline that ensures we capture all important moments while keeping your day flowing smoothly.",
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-step-3",
+      "icon": "camera",
+      "title": "Engagement Session",
+      "description": "A pre-wedding photo session helps us get comfortable working together and provides beautiful images for your save-the-dates.",
+      "category": "Weddings"
+    },
+
+    {
+      "_id": "wedding-step-4",
+      "icon": "clock",
+      "title": "Timeline Management",
+      "description": "I'll work seamlessly with your other vendors to keep everything on schedule while capturing both planned and spontaneous moments.",
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-step-5",
+      "icon": "camera",
+      "title": "Photography Coverage",
+      "description": "From getting ready through to the last dance, I'll document all the big moments and the intimate details that make your day unique.",
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-step-6",
+      "icon": "heart",
+      "title": "Candid Moments",
+      "description": "While capturing the formal shots, I'll also be on the lookout for those natural, unscripted moments that tell your authentic story.",
+      "category": "Weddings"
+    },
+
+    {
+      "_id": "wedding-step-7",
+      "icon": "image",
+      "title": "Image Selection",
+      "description": "I carefully select and edit the best images that tell the complete story of your day, ensuring each photo meets my high standards.",
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-step-8",
+      "icon": "heart",
+      "title": "Gallery Delivery",
+      "description": "Within 6-8 weeks, you'll receive your private online gallery of carefully curated and beautifully edited images.",
+      "category": "Weddings"
+    },
+    {
+      "_id": "wedding-step-9",
+      "icon": "image",
+      "title": "Album Design",
+      "description": "We'll work together to design a premium wedding album that perfectly tells the story of your special day.",
+      "category": "Weddings"
+    },
+
+    {
+      "_id": "portrait-step-1",
+      "icon": "message",
+      "title": "Initial Consultation",
+      "description": "We'll discuss your vision, preferred style, and any specific requirements to ensure your portraits align with your expectations.",
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-step-2",
+      "icon": "palette",
+      "title": "Style Planning",
+      "description": "I'll guide you through outfit selections, location choices, and provide tips to help you feel confident and prepared.",
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-step-3",
+      "icon": "clock",
+      "title": "Session Preparation",
+      "description": "You'll receive a detailed guide with tips for preparing for your session, including timing, what to bring, and what to expect.",
+      "category": "Portraits"
+    },
+
+    {
+      "_id": "portrait-step-4",
+      "icon": "heart",
+      "title": "Relaxed Environment",
+      "description": "I create a comfortable, fun atmosphere where you can be yourself, ensuring natural and authentic expressions.",
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-step-5",
+      "icon": "camera",
+      "title": "Professional Direction",
+      "description": "I'll guide you through poses and expressions while capturing both planned shots and candid moments.",
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-step-6",
+      "icon": "image",
+      "title": "Image Review",
+      "description": "We'll review shots throughout the session to ensure we're capturing your vision and make adjustments as needed.",
+      "category": "Portraits"
+    },
+
+    {
+      "_id": "portrait-step-7",
+      "icon": "image",
+      "title": "Preview Gallery",
+      "description": "Within 48 hours, you'll receive a curated selection of preview images to get excited about your final gallery.",
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-step-8",
+      "icon": "palette",
+      "title": "Professional Editing",
+      "description": "Each selected image is carefully edited to enhance its natural beauty while maintaining authenticity.",
+      "category": "Portraits"
+    },
+    {
+      "_id": "portrait-step-9",
+      "icon": "heart",
+      "title": "Final Delivery",
+      "description": "Within 2 weeks, you'll receive your complete online gallery with all your beautifully edited images.",
+      "category": "Portraits"
+    }
+  ]
+}

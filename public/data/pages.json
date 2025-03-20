@@ -1,0 +1,19 @@
+{
+    "pages": [
+      {
+        "name": "home"
+      },
+      {
+        "name": "weddings"
+      },
+      {
+        "name": "portraits"
+      },
+      {
+        "name": "contact"
+      },
+      {
+        "name": "projects"
+      }
+    ]
+  } 

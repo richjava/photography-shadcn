@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  :root {
+    /* Accent color hsl values used in tailwind.config file */
+    --hue-accent: 220;
+    --saturation-accent: 9%;
+    --lightness-accent: 46%;
+  }
+  
+  main {
+    margin-top: 98px;
+  }
+}
+
+/* Custom components */
+@layer components {
+}
+
+/* Custom utilities */
+@layer utilities {
+}
+
+/* Display styles */
+.display-xs {
+  @apply font-display text-display-xs leading-display-xs;
+}
+
+.display-sm {
+  @apply font-display text-display-sm leading-display-sm;
+}
+
+.display-md {
+  @apply font-display text-display-md leading-display-md;
+}
+
+.display-lg {
+  @apply font-display text-display-lg leading-display-lg;
+}
+
+/* Heading styles */
+.heading-xs {
+  @apply text-heading-xs leading-heading-xs;
+}
+
+.heading-sm {
+  @apply text-heading-sm leading-heading-sm;
+}
+.heading-md {
+  @apply text-heading-md leading-heading-md;
+}
+
+.heading-lg {
+  @apply text-heading-lg leading-heading-lg;
+}
+
+.heading-xl {
+  @apply text-heading-xl leading-heading-xl;
+}
+
+.heading-xxl {
+  @apply text-heading-xxl leading-heading-xxl;
+}
+
+/* Label styles */
+.label-xs {
+  @apply text-label-xs leading-label-xs;
+}
+
+.label-sm {
+  @apply text-label-sm leading-label-sm;
+}
+
+.label-md {
+  @apply text-label-md leading-label-md;
+}
+
+.label-lg {
+  @apply text-label-lg leading-label-lg;
+}
+
+/* Paragraph styles */
+.paragraph-xs {
+  @apply text-paragraph-xs leading-paragraph-xs;
+}
+
+.paragraph-sm {
+  @apply text-paragraph-sm leading-paragraph-sm;
+}
+
+.paragraph-md {
+  @apply text-paragraph-md leading-paragraph-md;
+}
+
+.paragraph-lg {
+  @apply text-paragraph-lg leading-paragraph-lg;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

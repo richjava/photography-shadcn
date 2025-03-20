@@ -1,0 +1,103 @@
+{
+  "templates": [
+    {
+      "name": "header1",
+      "title": "Header 1",
+      "category": "headers",
+      "description": "Simple header with justified logo and nav links."
+    },
+    {
+      "name": "footer1",
+      "title": "Footer 1",
+      "category": "footers",
+      "description": "Simple footer with centered content and social links."
+    },
+    {
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
+    },
+    {
+      "name": "hero1",
+      "title": "Hero 1",
+      "category": "covers",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Full viewport hero with centered text and background image.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203378/hero-min_dy7eow.png"
+    },
+    {
+      "name": "about1",
+      "title": "About 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Two-column about section with image, quote, and biography.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/about-min_wjyip4.png"
+    },
+    {
+      "name": "services1",
+      "title": "Services 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Two-column services grid with images and call-to-action buttons.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
+    },
+    {
+      "name": "banner1",
+      "title": "Banner 1",
+      "category": "banners",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Introduction banner with title, subtitle, and description.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+    },
+    {
+      "name": "galleryCTA1",
+      "title": "Gallery CTA",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Masonry gallery with category filtering and image modal.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/weddings-gallery-cta-min_vvq7jk.png"
+    },
+    {
+      "name": "process1",
+      "title": "Process 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Process section with title, description, and steps.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
+    },
+    {
+      "name": "portraits-pricing1",
+      "title": "Portraits Pricing 1",
+      "category": "pricing",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Pricing packages display for portrait photography services.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202912/portraits-process_b3szlp.png"
+    },
+    {
+      "name": "contactLanding1",
+      "title": "Contact Landing 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Contact landing section with a form",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203837/contact-landing-min_gzraky.png"
+    },
+    {
+      "name": "pricing1",
+      "title": "Pricing 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Pricing packages display for services.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+    },
+    {
+      "name": "projects",
+      "title": "Projects 1",
+      "category": "blocks",
+      "namespace": "richjava_photography-shadcn",
+      "description": "Gallery section for photographic projects.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742204128/gallery-min_cxra5z.png"
+    }
+  ]
+}

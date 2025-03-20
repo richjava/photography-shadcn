@@ -1,0 +1,285 @@
+{
+  "sections": {
+    "header": {
+      "name": "header",
+      "type": "layout"
+    },
+    "footer": {
+      "name": "footer",
+      "type": "layout"
+    },
+    "homeSeo": {
+      "name": "homeSeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "shareImage": {
+          "type": "image"
+        }
+      }
+    },
+    "hero": {
+      "name": "hero",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "subtitle": {
+          "type": "string",
+          "required": true
+        },
+        "backgroundImage": {
+          "type": "image"
+        }
+      }
+    },
+    "about": {
+      "name": "about",
+      "type": "body",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "image": {
+          "type": "image"
+        },
+        "quote": {
+          "type": "string",
+          "required": true
+        },
+        "bio": {
+          "type": "text",
+          "required": true
+        },
+        "primaryButton": {
+          "type": "element",
+          "repeatable": false,
+          "element": "buttonLink"
+        },
+        "secondaryButton": {
+          "type": "element",
+          "repeatable": false,
+          "element": "buttonLink"
+        }
+      }
+    },
+    "services": {
+      "name": "services",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    "weddingsSeo": {
+      "name": "weddingsSeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "shareImage": {
+          "type": "image"
+        }
+      }
+    },
+    "weddingsBanner": {
+      "name": "weddingsBanner",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    "weddingsGalleryCTA": {
+      "name": "weddingsGalleryCTA",
+      "type": "body"
+    },
+    "weddingsProcess": {
+      "name": "weddingsProcess",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "ctaText": {
+          "type": "string",
+          "required": true
+        },
+        "ctaLink": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "weddingsPricing": {
+      "name": "weddingsPricing",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    "portraitsSeo": {
+      "name": "portraitsSeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "shareImage": {
+          "type": "image"
+        }
+      }
+    },
+    "portraitsBanner": {
+      "name": "portraitsBanner",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    "portraitsGalleryCTA": {
+      "name": "portraitsGalleryCTA",
+      "type": "body"
+    },
+    "portraitsPricing": {
+      "name": "portraitsPricing",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    "portraitsProcess": {
+      "name": "portraitsProcess",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "ctaText": {
+          "type": "string",
+          "required": true
+        },
+        "ctaLink": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "contactSeo": {
+      "name": "contactSeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "shareImage": {
+          "type": "image"
+        }
+      }
+    },
+    "contactLanding": {
+      "name": "contactLanding",
+      "type": "body",
+      "fields": {
+        "backgroundImage": { "type": "image" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "location": { "type": "string" },
+        "businessHours": { "type": "string" },
+        "formTitle": { "type": "string" }
+      }
+    },
+    "projectsSeo": {
+      "name": "projectsSeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "shareImage": {
+          "type": "image"
+        }
+      }
+    },
+    "gallery": {
+      "name": "gallery",
+      "type": "body"
+    }
+  }
+}

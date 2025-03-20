@@ -1,0 +1,427 @@
+{
+  "sections": [
+    {
+      "name": "header",
+      "title": "Header",
+      "description": "Main navigation header with logo and menu items.",
+      "collections": {
+        "primaryMenuItem": {}
+      },
+      "templates": ["header1"],
+      "type": "layout",
+      "defaultTemplate": { "name": "header1" }
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "description": "Site footer with copyright information.",
+      "templates": ["footer1"],
+      "type": "layout",
+      "defaultTemplate": { "name": "footer1" }
+    },
+    {
+      "name": "homeSeo",
+      "title": "Home SEO",
+      "data": {
+        "pageTitle": "Jane Doe Photography | Wedding & Portrait Photographer",
+        "description": "New York-based photographer specializing in wedding photography, intimate portraits, and creative personal projects. Capturing life's beautiful moments with a natural, authentic style.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "hero",
+      "title": "Home Hero",
+      "description": "The main landing section of the home page",
+      "data": {
+        "title": "Jane Doe",
+        "subtitle": "Professional Photographer",
+        "backgroundImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": ["hero1"],
+      "type": "body",
+      "defaultTemplate": { "name": "hero1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203378/hero-min_dy7eow.png"
+    },
+    {
+      "name": "about",
+      "title": "About Section",
+      "description": "About the photographer section",
+      "data": {
+        "name": "Jane",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5"
+        },
+        "quote": "Photography is not just about capturing moments; it's about preserving feelings, emotions, and stories that deserve to be remembered.",
+        "bio": [
+          "I've been fortunate to turn my passion for photography into a journey of capturing life's most precious moments. What started with a simple camera and endless curiosity has evolved into a deep love for visual storytelling.",
+          "Based in New York but always eager to travel, I specialize in wedding photography, intimate portraits, and creative personal projects. My style blends candid photojournalism with artistic composition, always focusing on authentic emotions and natural beauty.",
+          "When I'm not behind the camera, you'll find me exploring hidden city corners, experimenting with film photography, or sharing my knowledge through photography workshops. Every shoot is an opportunity to create something unique and meaningful."
+        ],
+        "buttonLinks": [{
+          "label": "Work with me",
+          "url": "/contact",
+          "type": "primary"
+        },{
+          "label": "View my projects",
+          "url": "/projects",
+          "type": "secondary"
+        }
+      ]},
+      "templates": ["about1"],
+      "type": "body",
+      "defaultTemplate": { "name": "about1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/about-min_wjyip4.png"
+    },
+    {
+      "name": "services",
+      "title": "Services Section",
+      "description": "Photography services offered",
+      "data": {
+        "title": "Capture Your Story",
+        "description": "Whether you're planning your dream wedding or looking to create stunning portraits, I'm here to help you preserve these precious moments."
+      },
+      "templates": ["services1"],
+      "type": "body",
+      "defaultTemplate": { "name": "services1" },
+      "collections": {
+        "service": {}
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
+    },
+    {
+      "name": "weddingsSeo",
+      "title": "Weddings SEO",
+      "data": {
+        "pageTitle": "Weddings Photography | Jane Doe Photography",
+        "description": "Professional wedding photography in New York. Capturing authentic moments and genuine expressions in natural and studio settings.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "weddingsBanner",
+      "title": "Weddings Banner",
+      "description": "Photography services offered",
+      "data": {
+        "title": "Capture Your Story",
+        "description": "Whether you're planning your dream wedding or looking to create stunning portraits, I'm here to help you preserve these precious moments."
+      },
+      "templates": ["banner1"],
+      "type": "body",
+      "defaultTemplate": { "name": "banner1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/weddings-banner-min_kna61p.png"
+    },
+    {
+      "name": "weddingsGalleryCTA",
+      "title": "Weddings Gallery CTA",
+      "description": "Wedding gallery CTA section",
+      "templates": ["galleryCTA1"],
+      "type": "body",
+      "defaultTemplate": { "name": "galleryCTA1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/weddings-gallery-cta-min_vvq7jk.png",
+      "collections": {
+        "story": {
+          "config": {
+            "limit": 1,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Weddings"
+              }
+            ],
+            "populate": [
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "weddingsProcess",
+      "title": "Weddings Process",
+      "description": "Photography services offered",
+      "data": {
+        "title": "The Journey Together",
+        "description": "From our first meeting to the delivery of your final gallery, I'm here to ensure your wedding photography experience is as beautiful as the moments we capture.",
+        "ctaText": "Let's Start Your Journey",
+        "ctaLink": "/contact"
+      },
+      "collections": {
+        "phase": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Weddings"
+              }
+            ],
+            "populate": [
+              {
+                "name": "steps",
+                "type": "step"
+              }
+            ]
+          }
+        }
+      },
+      "templates": ["process1"],
+      "type": "body",
+      "defaultTemplate": { "name": "process1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
+    },
+    {
+      "name": "portraitsSeo",
+      "title": "Portraits SEO",
+      "data": {
+        "pageTitle": "Portrait Photography | Jane Doe Photography",
+        "description": "Professional portrait photography in New York. Capturing authentic moments and genuine expressions in natural and studio settings.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "portraitsBanner",
+      "title": "Portraits Banner",
+      "description": "Banner section for the portraits page",
+      "data": {
+        "title": "The Art of Portraiture",
+        "description": "Every portrait session is an opportunity to capture the essence of who you are. Whether it's for professional headshots, family portraits, or creative personal projects, I focus on creating images that reflect your authentic self while maintaining artistic excellence."
+      },
+      "templates": ["banner1"],
+      "type": "body",
+      "defaultTemplate": { "name": "banner1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+    },
+    {
+      "name": "portraitsGalleryCTA",
+      "title": "Portraits Gallery CTA",
+      "description": "Gallery CTA section for portrait photography",
+      "templates": ["galleryCTA1"],
+      "type": "body",
+      "defaultTemplate": { "name": "galleryCTA1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/portraits-gallery-cta_w283ow.png",
+      "collections": {
+        "story": {
+          "config": {
+            "limit": 1,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Portraits"
+              }
+            ],
+            "populate": [
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "portraitsProcess",
+      "title": "Portraits Process",
+      "description": "Photography services offered for portraits",
+      "data": {
+        "title": "The Portrait Experience",
+        "description": "From our first conversation to the delivery of your final images, I ensure every step of your portrait experience is thoughtfully crafted and enjoyable.",
+        "ctaText": "Book Your Portrait Session",
+        "ctaLink": "/contact"
+      },
+      "collections": {
+        "phase": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Portraits"
+              }
+            ],
+            "populate": [
+              {
+                "name": "steps",
+                "type": "step"
+              }
+            ]
+          }
+        }
+      },
+      "templates": ["process1"],
+      "type": "body",
+      "defaultTemplate": { "name": "process1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203385/portraits-process-min_sns05i.png"
+    },
+    {
+      "name": "contactSeo",
+      "title": "Contact SEO",
+      "data": {
+        "pageTitle": "Contact | Jane Doe Photography",
+        "description": "Contact page for New York-based photographer Jane Doe specializing in wedding photography, and intimate portraits.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "contactLanding",
+      "title": "Contact Landing",
+      "description": "Contact landing section with a form",
+      "data": {
+        "backgroundImage": {
+          "url": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&q=80"
+        },
+        "title": "Let's Create Something Beautiful Together",
+        "description": "I'm always excited to discuss new photography projects, whether it's capturing your special moments or creating stunning visuals for your brand. Let's connect and bring your vision to life.",
+        "phone": "021 1234 1234",
+        "email": "jane@janedoephotography.com",
+        "location": "New York",
+        "businessHours": "By Appointment",
+        "formTitle": "Send Me a Message"
+      },
+      "templates": ["contactLanding1"],
+      "type": "body",
+      "defaultTemplate": { "name": "contactLanding1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203837/contact-landing-min_gzraky.png"
+    },
+    {
+      "name": "portraitsPricing",
+      "title": "Portraits Pricing",
+      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "data": {
+        "title": "Portrait Session Packages",
+        "description": "Choose the perfect package for your portrait needs. All packages include professional editing and high-resolution digital images."
+      },
+      "collections": {
+        "pricingPackage": {
+          "config": {
+            "limit": 2,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Portraits"
+              }
+            ]
+          }
+        }
+      },
+      "templates": ["pricing1"],
+      "type": "body",
+      "defaultTemplate": { "name": "pricing1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203386/portraits-pricing-min_qmuayl.png"
+    },
+    {
+      "name": "weddingsPricing",
+      "title": "Weddings Pricing",
+      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "data": {
+        "title": "Wedding Session Packages",
+        "description": "Choose the perfect package for your wedding needs. All packages include professional editing and high-resolution digital images."
+      },
+      "collections": {
+        "pricingPackage": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Weddings"
+              }
+            ]
+          }
+        }
+      },
+      "templates": ["pricing1"],
+      "type": "body",
+      "defaultTemplate": { "name": "pricing1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+    },
+    {
+      "name": "projectsSeo",
+      "title": "Projects SEO",
+      "data": {
+        "pageTitle": "Projects | Jane Doe Photography | Personal & professional projects",
+        "description": "Photographic projects by New York-based photographer Jane Doe specializing in wedding photography, and intimate portraits.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "projectsSeo",
+      "title": "Projects SEO",
+      "data": {
+        "pageTitle": "Jane Doe Photography | Wedding & Portrait Photographer | ",
+        "description": "Photographer specializing in wedding photography, intimate portraits, and creative personal projects. Capturing life's beautiful moments with a natural, authentic style.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "gallery",
+      "title": "Gallery",
+      "description": "Gallery of photographic projects",
+      "templates": ["projects"],
+      "type": "body",
+      "defaultTemplate": { "name": "projects" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742204128/gallery-min_cxra5z.png",
+      "collections": {
+        "project": {
+          "config": {
+            "populate": [
+              {
+                "name": "coverPhoto",
+                "type": "photo"
+              },
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

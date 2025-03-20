@@ -1,0 +1,55 @@
+{
+  "modules": [
+    {
+      "name": "home",
+      "title": "Home",
+      "description": "Main landing page module",
+      "required": true,
+      "modulePages": [
+        {
+          "name": "homeBase"
+        }
+      ]
+    },
+    {
+      "name": "weddings",
+      "title": "Weddings",
+      "description": "Weddings portfolio module",
+      "modulePages": [
+        {
+          "name": "weddingsBase"
+        }
+      ]
+    },
+    {
+      "name": "portraits",
+      "title": "Portraits",
+      "description": "Portraits portfolio module",
+      "modulePages": [
+        {
+          "name": "portraitsBase"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "title": "Contact",
+      "description": "Contact form and information module",
+      "modulePages": [
+        {
+          "name": "contactBase"
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "title": "Projects",
+      "description": "A gallery of photographic projects",
+      "modulePages": [
+        {
+          "name": "projectsBase"
+        }
+      ]
+    }
+  ]
+} 

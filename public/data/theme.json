@@ -1,0 +1,23 @@
+{
+  "theme": {
+    "namespace": "richjava_photography-shadcn",
+    "title": "Photography ShadCN",
+    "description": "A modern photography services website theme built with Next.js and ShadCN UI.",
+    "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203378/hero-min_dy7eow.png",
+    "demoUrl": "https://photography-shadcn.vercel.app/",
+    "repoUrl": "https://github.com/richjava/photography-shadcn",
+    "designSystem": "shadcn",
+    "config": {
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "next-themes",
+        "tailwind-merge",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-scroll-area"
+      ]
+    }
+  }
+}

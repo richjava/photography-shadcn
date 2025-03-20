@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "title": "Sarah & Michael's Coastal Wedding",
+      "description": "A breathtaking celebration at sunset, where modern elegance met coastal charm. The couple chose an intimate gathering of 80 guests, with a ceremony overlooking the Pacific Ocean. The day was filled with personal touches, from hand-written vows to a surprise performance by the bride for her groom.",
+      "category": "Weddings",
+      "location": "Wellington, New Zealand",
+      "style": "Modern Coastal",
+      "photos": ["wedding-4","wedding-1","wedding-2","wedding-3"]
+    },
+    {
+      "title": "The Thompson Family - Autumn Portraits",
+      "description": "A cozy autumn afternoon spent capturing genuine moments with the Thompson family. From playful interactions between siblings to tender parent-child moments, this session celebrated the natural connections and joy within this family of four. The golden light and fall colors provided a perfect backdrop for their story.",
+      "category": "Portraits",
+      "location": "Wellington Botanic Gardens",
+      "style": "Natural & Candid",
+      "photos": ["portrait-4","portrait-2","portrait-1", "portrait-3"]
+    }
+  ]
+}

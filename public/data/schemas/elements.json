@@ -1,0 +1,13 @@
+{
+  "elements": [
+    {
+      "name": "buttonLink",
+      "title": "Button Link",
+      "fields": {
+        "label": { "type": "string" },
+        "url": { "type": "string" },
+        "type": { "type": "string" }
+      }
+    }
+  ]
+}

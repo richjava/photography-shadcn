@@ -1,0 +1,149 @@
+{
+  "contentTypes": [
+    {
+      "name": "primaryMenuItem",
+      "fields": {
+        "slug": { "type": "uid", "targetField": "label", "required": true },
+        "label": { "type": "string", "required": true },
+        "url": { "type": "string", "unique": true, "required": true }
+      }
+    },
+    {
+      "name": "photo",
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "description": { "type": "text" },
+        "image": { "type": "image" },
+        "category": {
+          "type": "enumeration",
+          "values": ["Landscapes", "Portraits", "Weddings", "Architecture", "Street Photography"]
+        }
+      }
+    },
+    {
+      "name": "project",
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "description": { "type": "text" },
+        "photos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "photo"
+        },
+        "coverPhoto": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "photo"
+        },
+        "category": {
+          "type": "enumeration",
+          "values": ["Portrait Series", "Landscapes", "Street Photography", "Architecture"]
+        }
+      }
+    },
+    {
+      "name": "process",
+      "dataPosition": 3,
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "description": { "type": "text" },
+        "phases": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "phase"
+        }
+      }
+    },
+    {
+      "name": "phase",
+      "dataPosition": 2,
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "steps": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "step"
+        },
+        "category": {
+          "type": "enumeration",
+          "values": ["Weddings","Portraits"]
+        }
+      }
+    },
+    {
+      "name": "step",
+      "dataPosition": 1,
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "description": { "type": "text" },
+        "icon": { "type": "string", "required": true }
+      }
+    },
+    {
+      "name": "story",
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "description": { "type": "text" },
+        "location": { "type": "string", "required": false },
+        "style": { "type": "string", "required": false },
+        "photos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "photo"
+        },
+        "category": { "type": "enumeration", "values": ["Weddings", "Portraits"] }
+      }
+    },
+    {
+      "name": "profile",
+      "fields": {
+        "name": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "name", "required": true },
+        "image": { "type": "string", "required": true },
+        "quote": { "type": "text" },
+        "bio": { "type": "array", "items": {"type": "string"} }
+      }
+    },
+    {
+      "name": "pricingPackage",
+      "fields": {
+        "name": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "name", "required": true },
+        "category": { "type": "enumeration", "values": ["Weddings","Portraits"] },
+        "price": { "type": "string", "required": true },
+        "isPopular": { "type": "boolean" },
+        "features": { "type": "array", "items": {"type": "string"} }
+      }
+    },
+    {
+      "name": "service",
+      "fields": {
+        "title": { "type": "string" },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "description": { "type": "text" },
+        "image": { "type": "image" },
+        "cta": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "title": "Label",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "title": "Url",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

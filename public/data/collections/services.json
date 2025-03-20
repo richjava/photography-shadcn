@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "title": "Wedding Photography",
+      "description": "From intimate ceremonies to grand celebrations, I'll be there to document every precious moment of your special day.",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866",
+        "alt": "Wedding Photography"
+      },
+      "cta": {
+        "label": "Plan Your Wedding",
+        "url": "/weddings"
+      }
+    },
+    {
+      "title": "Portrait Photography",
+      "description": "Professional headshots, family portraits, or creative personal sessions - let's create images that reflect your authentic self.",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+        "alt": "Portrait Photography"
+      },
+      "cta": {
+        "label": "Book a Session",
+        "url": "/portraits"
+      }
+    }
+  ]
+}
