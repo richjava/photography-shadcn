@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -26,10 +25,6 @@ interface AboutProps {
 
 export default function About({ content }: AboutProps) {
   const name = content?.data?.name || "Jane Doe";
-  const image = content?.data?.image || {
-    url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-    alt: "Jane Doe",
-  };
   const quote =
     content?.data?.quote ||
     "Photography is not just about capturing moments; it's about preserving feelings, emotions, and stories that deserve to be remembered.";

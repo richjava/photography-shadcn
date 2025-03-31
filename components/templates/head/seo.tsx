@@ -1,8 +1,22 @@
 import Head from "next/head";
 
-export default function Seo( {content}:any ) {
-  let { data = {} } = { ...content };
-  let shareImage = data?.shareImage.url;
+interface SeoProps {
+  content?: {
+    data?: {
+      pageTitle?: string;
+      description?: string;
+      shareImage?: {
+        url: string;
+      };
+      article?: boolean;
+    };
+  };
+}
+
+export default function Seo({ content }: SeoProps) {
+  const { data = {} } = { ...content };
+  const shareImage = data?.shareImage?.url;
+
   return (
     <>
       {data && (

@@ -41,11 +41,12 @@ interface PricingProps {
 
 export default function Projects({ content }: PricingProps) {
   const projects = content?.collections?.project || [];
-  if (projects.length === 0) return null;
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const [selectedImage, setSelectedImage] = useState<Photo | null>(null);
 
-  const handleImageClick = (photo: Photo, index: number) => {
+  if (projects.length === 0) return null;
+
+  const handleImageClick = (photo: Photo) => {
     setSelectedImage(photo);
   };
 
@@ -99,16 +100,16 @@ export default function Projects({ content }: PricingProps) {
                 </p>
               </div>
               <div className="gap-4 space-y-4 columns-1 md:columns-2 lg:columns-3">
-                {selectedProject.photos.map((photo, index) => (
+                {selectedProject.photos.map((photo) => (
                   <div
-                    key={index}
+                    key={photo.id}
                     className="cursor-pointer break-inside-avoid"
-                    onClick={() => handleImageClick(photo, index)}
+                    onClick={() => handleImageClick(photo)}
                   >
                     <div className="relative overflow-hidden rounded-lg group">
                       <img
                         src={photo.image?.url}
-                        alt={`${selectedProject.title} ${index + 1}`}
+                        alt={`${selectedProject.title} ${photo.id}`}
                         className="w-full h-auto transition-transform duration-300 transform group-hover:scale-105"
                       />
                       <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 bg-black/60 group-hover:opacity-100">
