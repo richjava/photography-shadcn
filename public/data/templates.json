@@ -49,7 +49,7 @@
       "category": "banners",
       "namespace": "richjava_photography-shadcn",
       "description": "Introduction banner with title, subtitle, and description.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/weddings-banner-min_kna61p.png"
     },
     {
       "name": "galleryCTA1",
@@ -68,14 +68,6 @@
       "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
     },
     {
-      "name": "portraits-pricing1",
-      "title": "Portraits Pricing 1",
-      "category": "pricing",
-      "namespace": "richjava_photography-shadcn",
-      "description": "Pricing packages display for portrait photography services.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202912/portraits-process_b3szlp.png"
-    },
-    {
       "name": "contactLanding1",
       "title": "Contact Landing 1",
       "category": "blocks",
@@ -89,7 +81,7 @@
       "category": "blocks",
       "namespace": "richjava_photography-shadcn",
       "description": "Pricing packages display for services.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203386/portraits-pricing-min_qmuayl.png"
     },
     {
       "name": "projects",

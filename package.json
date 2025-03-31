@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builtjs/theme": "^1.4.12",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.0.4",
     "embla-carousel-react": "^8.5.2",

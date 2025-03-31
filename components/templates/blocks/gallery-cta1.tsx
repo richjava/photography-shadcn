@@ -55,7 +55,6 @@ export default function GalleryCTA({ content }: GalleryCTAProps) {
 
   const firstStory = stories[0];
   const galleryPhotos = firstStory.photos.slice(1, 4);
-  console.log('photos..', galleryPhotos)
 
   return (
     <section id="galleryCTA1" className="px-8 py-24 bg-gray-50">
@@ -99,8 +98,8 @@ export default function GalleryCTA({ content }: GalleryCTAProps) {
                   {firstStory.description}
                 </p>
                 <div className="space-y-2 text-sm text-gray-300 sm:space-y-4 sm:text-base">
-                  <p>Location: {firstStory.location}</p>
-                  <p>Style: {firstStory.style}</p>
+                  {firstStory.location && <p>Location: {firstStory.location}</p>}
+                  {firstStory.style && <p>Style: {firstStory.style}</p>}
                 </div>
               </div>
               <Link href="/contact" className="mt-6 sm:mt-8">

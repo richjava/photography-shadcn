@@ -44,20 +44,6 @@
       }
     },
     {
-      "name": "process",
-      "dataPosition": 3,
-      "fields": {
-        "title": { "type": "string" },
-        "slug": { "type": "uid", "targetField": "title", "required": true },
-        "description": { "type": "text" },
-        "phases": {
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "phase"
-        }
-      }
-    },
-    {
       "name": "phase",
       "dataPosition": 2,
       "fields": {
@@ -98,16 +84,6 @@
           "target": "photo"
         },
         "category": { "type": "enumeration", "values": ["Weddings", "Portraits"] }
-      }
-    },
-    {
-      "name": "profile",
-      "fields": {
-        "name": { "type": "string" },
-        "slug": { "type": "uid", "targetField": "name", "required": true },
-        "image": { "type": "string", "required": true },
-        "quote": { "type": "text" },
-        "bio": { "type": "array", "items": {"type": "string"} }
       }
     },
     {

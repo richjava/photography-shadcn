@@ -35,7 +35,6 @@ export default function ContactLanding1({ content }: ContactLandingProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
     setFormData({ name: "", email: "", message: "" });
   };
 

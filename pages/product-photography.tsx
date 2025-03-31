@@ -7,7 +7,7 @@ export default withRouter(Page);
 
 export async function getStaticProps() {
   const config = await getConfig({
-    pageName: 'projects'
+    pageName: 'productPhotography'
   });
   return {
     props: { config }

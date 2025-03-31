@@ -83,8 +83,8 @@ export default function Pricing1({ content }: PricingProps) {
                   <Link href="/contact">
                     <Button 
                       variant={pkg.isPopular ? 'default' : 'outline'}
-                      className={`w-full text-lg py-6 ${
-                        pkg.isPopular ? 'bg-white text-black hover:bg-gray-100' : ''
+                      className={`w-full text-lg py-6 hover:bg-gray-100 ${
+                        pkg.isPopular ? 'bg-white text-black' : ''
                       }`}
                     >
                       {pkg.buttonText || `Book ${pkg.name}`}

@@ -1,6 +1,13 @@
 {
   "data": [
     {
+      "_id": "primary-menu-item-FT9nIrRRe6",
+      "_type": "primaryMenuItem",
+      "slug": "product-photography",
+      "label": "Product Photography",
+      "url": "/product-photography"
+    },
+    {
       "_id": "primary-menu-item-FT9nIrRRe7",
       "_type": "primaryMenuItem",
       "slug": "weddings",

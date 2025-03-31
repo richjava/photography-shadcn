@@ -1,6 +1,50 @@
 {
   "data": [
     {
+      "_id": "product-1",
+      "_type": "photo",
+      "title": "Product 1",
+      "description": "Description of product 1",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1627384113710-424c9181ebbb?auto=format&fit=crop&q=80"
+      },
+      "category": "Product Photography",
+      "slug": "product-1"
+    },
+    {
+      "_id": "product-2",
+      "_type": "photo",
+      "title": "Product 2",
+      "description": "Description of product 2",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80"
+      },
+      "category": "Product Photography",
+      "slug": "product-2"
+    },
+    {
+      "_id": "product-3",
+      "_type": "photo",
+      "title": "Product 3",
+      "description": "Description of product 3",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1491472253230-a044054ca35f?auto=format&fit=crop&q=80"
+      },
+      "category": "Product Photography",
+      "slug": "product-3"
+    },
+    {
+      "_id": "product-4",
+      "_type": "photo",
+      "title": "Product 4",
+      "description": "Description of product 4",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80d"
+      },
+      "category": "Product Photography",
+      "slug": "product-4"
+    },
+    {
       "_id": "portrait-1",
       "_type": "photo",
       "title": "Portrait 1",

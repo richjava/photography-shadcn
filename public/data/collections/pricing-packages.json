@@ -1,6 +1,31 @@
 {
   "data": [
     {
+      "name": "Basic",
+      "slug": "product-essential",
+      "category": "Product Photography",
+      "price": "$499",
+      "features": [
+        "Up to 10 products",
+        "2 angles per product",
+        "Basic retouching",
+        "Web-ready files"
+      ]
+    },
+    {
+      "name": "Professional",
+      "slug": "product-premium",
+      "category": "Product Photography",
+      "price": "$999",
+      "isPopular": true,
+      "features": [
+        "Up to 20 products",
+        "4 angles per product",
+        "Advanced retouching",
+        "Web & print files"
+      ]
+    },
+    {
       "name": "Essential",
       "slug": "portraits-essential",
       "category": "Portraits",

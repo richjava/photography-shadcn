@@ -95,6 +95,127 @@
       },
       "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
     },
+
+    {
+      "name": "productPhotographySeo",
+      "title": "Product Photography SEO",
+      "data": {
+        "pageTitle": "Product Photography  Photography | Jane Doe Photography",
+        "description": "Professional product photography  photography in New York.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "templates": ["seo"],
+      "type": "head",
+      "defaultTemplate": { "name": "seo" }
+    },
+    {
+      "name": "productPhotographyBanner",
+      "title": "Product Photography  Banner",
+      "description": "Product Photography services offered",
+      "data": {
+        "title": "Professional Product Photography",
+        "description": "Transform your products into compelling visual stories. Whether you're an e-commerce business, artisan creator, or retail brand, I specialize in creating stunning product imagery that captures attention and drives sales."
+      },
+      "templates": ["banner1"],
+      "type": "body",
+      "defaultTemplate": { "name": "banner1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402523/product-banner-min_pf0c4a.png"
+    },
+    {
+      "name": "productPhotographyGalleryCTA",
+      "title": "Product Photography  CTA",
+      "description": "Product Photography  gallery CTA section",
+      "templates": ["galleryCTA1"],
+      "type": "body",
+      "defaultTemplate": { "name": "galleryCTA1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402524/product-gallery-cta-min_xx6q2n.png",
+      "collections": {
+        "story": {
+          "config": {
+            "limit": 1,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Product Photography"
+              }
+            ],
+            "populate": [
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "productPhotographyProcess",
+      "title": "Product Photography  Process",
+      "description": "Product Photography  services offered",
+      "data": {
+        "title": "The Product Photography Process",
+        "description": "From concept to final delivery, every step of your product photography session is carefully planned to showcase your items in their best light.",
+        "ctaText": "Book Your Product Session",
+        "ctaLink": "/contact"
+      },
+      "collections": {
+        "phase": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Product Photography"
+              }
+            ],
+            "populate": [
+              {
+                "name": "steps",
+                "type": "step"
+              }
+            ]
+          }
+        }
+      },
+      "templates": ["process1"],
+      "type": "body",
+      "defaultTemplate": { "name": "process1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402523/product-process-min_hdpqrm.png"
+    },
+    {
+      "name": "productPhotographyPricing",
+      "title": "Product Photography Packages",
+      "description": "Pricing section for product photography.",
+      "data": {
+        "title": "Product Photography Packages",
+        "description": "Choose the perfect package for your wedding needs. All packages include professional editing and high-resolution digital images."
+      },
+      "collections": {
+        "pricingPackage": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Product Photography"
+              }
+            ]
+          }
+        }
+      },
+      "templates": ["pricing1"],
+      "type": "body",
+      "defaultTemplate": { "name": "pricing1" },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402523/product-pricing-min_xtgprk.png"
+    },
     {
       "name": "weddingsSeo",
       "title": "Weddings SEO",
@@ -319,7 +440,7 @@
     {
       "name": "portraitsPricing",
       "title": "Portraits Pricing",
-      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "description": "Pricing section for portraits.",
       "data": {
         "title": "Portrait Session Packages",
         "description": "Choose the perfect package for your portrait needs. All packages include professional editing and high-resolution digital images."
@@ -346,7 +467,7 @@
     {
       "name": "weddingsPricing",
       "title": "Weddings Pricing",
-      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "description": "Pricing section for weddings.",
       "data": {
         "title": "Wedding Session Packages",
         "description": "Choose the perfect package for your wedding needs. All packages include professional editing and high-resolution digital images."

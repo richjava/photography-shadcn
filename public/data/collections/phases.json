@@ -1,6 +1,25 @@
 {
   "data": [
     {
+      "_id": "product-phase-1",
+      "title": "Pre-Production",
+      "steps": ["product-step-1", "product-step-2", "product-step-3"],
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-phase-2",
+      "title": "Production",
+      "steps": ["product-step-4", "product-step-5", "product-step-6"],
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-phase-3",
+      "title": "Post-Production",
+      "steps": ["product-step-7", "product-step-8", "product-step-9"],
+      "category": "Product Photography"
+    },
+
+    {
       "_id": "wedding-phase-1",
       "title": "Before the Wedding",
       "steps": ["wedding-step-1", "wedding-step-2", "wedding-step-3"],

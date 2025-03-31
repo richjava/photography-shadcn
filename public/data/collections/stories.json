@@ -1,6 +1,14 @@
 {
   "data": [
     {
+      "title": "Luxury Timepieces",
+      "description": "Swiss watchmaker Chronos sought images that showcased the craftsmanship of their collection. Using macro photography and specialized lighting, we captured every fine detail, highlighting the precision and elegance of each timepiece.",
+      "category": "Product Photography",
+      "location": "",
+      "style": "Elegant & Refined",
+      "photos": ["product-4","product-2","product-1", "product-3"]
+    },
+    {
       "title": "Sarah & Michael's Coastal Wedding",
       "description": "A breathtaking celebration at sunset, where modern elegance met coastal charm. The couple chose an intimate gathering of 80 guests, with a ceremony overlooking the Pacific Ocean. The day was filled with personal touches, from hand-written vows to a surprise performance by the bride for her groom.",
       "category": "Weddings",

@@ -57,18 +57,10 @@
           "type": "string",
           "required": true
         },
-        "bio": {
-          "type": "text",
-          "required": true
-        },
-        "primaryButton": {
+        "bio": { "type": "array", "items": { "type": "string" } },
+        "buttonLinks": {
           "type": "element",
-          "repeatable": false,
-          "element": "buttonLink"
-        },
-        "secondaryButton": {
-          "type": "element",
-          "repeatable": false,
+          "repeatable": true,
           "element": "buttonLink"
         }
       }
@@ -87,6 +79,78 @@
         }
       }
     },
+    "productPhotographySeo": {
+      "name": "productPhotographySeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "shareImage": {
+          "type": "image"
+        }
+      }
+    },
+    "productPhotographyBanner": {
+      "name": "productPhotographyBanner",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    "productPhotographyGalleryCTA": {
+      "name": "productPhotographyGalleryCTA",
+      "type": "body"
+    },
+    "productPhotographyProcess": {
+      "name": "productPhotographyProcess",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "ctaText": {
+          "type": "string",
+          "required": true
+        },
+        "ctaLink": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "productPhotographyPricing": {
+      "name": "productPhotographyPricing",
+      "type": "body",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+
     "weddingsSeo": {
       "name": "weddingsSeo",
       "type": "head",
@@ -158,6 +222,7 @@
         }
       }
     },
+    
     "portraitsSeo": {
       "name": "portraitsSeo",
       "type": "head",

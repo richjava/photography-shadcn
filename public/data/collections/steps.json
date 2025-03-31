@@ -1,6 +1,71 @@
 {
   "data": [
     {
+      "_id": "product-step-1",
+      "icon": "message",
+      "title": "Initial Consultation",
+      "description": "We'll discuss your brand, target audience, and specific requirements to create images that align with your marketing goals.",
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-step-2",
+      "icon": "palette",
+      "title": "Creative Direction",
+      "description": "Development of mood boards, styling concepts, and shot lists to ensure we capture every essential detail.",
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-step-3",
+      "icon": "clock",
+      "title": "Setup Planning",
+      "description": "Preparation of lighting, backgrounds, and props to create the perfect environment for your products.",
+      "category": "Product Photography"
+    },
+
+    {
+      "_id": "product-step-4",
+      "icon": "camera",
+      "title": "Professional Setup",
+      "description": "State-of-the-art equipment and lighting to ensure the highest quality results.",
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-step-5",
+      "icon": "heart",
+      "title": "Attention to Detail",
+      "description": "Careful positioning and styling to highlight your product's best features.",
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-step-6",
+      "icon": "image",
+      "title": "Multiple Angles",
+      "description": "Comprehensive coverage ensuring every important aspect of your product is captured.",
+      "category": "Product Photography"
+    },
+
+    {
+      "_id": "product-step-7",
+      "icon": "image",
+      "title": "Image Selection",
+      "description": "Careful curation of the best shots that tell your product's story.",
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-step-8",
+      "icon": "heart",
+      "title": "Professional Editing",
+      "description": "Color correction, retouching, and background removal if needed.",
+      "category": "Product Photography"
+    },
+    {
+      "_id": "product-step-9",
+      "icon": "palette",
+      "title": "Final Delivery",
+      "description": "High-resolution images optimized for your specific needs, whether web or print.",
+      "category": "Product Photography"
+    },
+    {
       "_id": "wedding-step-1",
       "icon": "message",
       "title": "Initial Consultation",

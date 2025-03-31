@@ -84,28 +84,6 @@
       }
     },
     {
-      "name": "process",
-      "dataPosition": 3,
-      "fields": {
-        "title": {
-          "type": "string"
-        },
-        "slug": {
-          "type": "uid",
-          "targetField": "title",
-          "required": true
-        },
-        "description": {
-          "type": "text"
-        },
-        "phases": {
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "phase"
-        }
-      }
-    },
-    {
       "name": "phase",
       "dataPosition": 2,
       "fields": {
@@ -185,32 +163,6 @@
             "Weddings",
             "Portraits"
           ]
-        }
-      }
-    },
-    {
-      "name": "profile",
-      "fields": {
-        "name": {
-          "type": "string"
-        },
-        "slug": {
-          "type": "uid",
-          "targetField": "name",
-          "required": true
-        },
-        "image": {
-          "type": "string",
-          "required": true
-        },
-        "quote": {
-          "type": "text"
-        },
-        "bio": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
@@ -297,6 +249,26 @@
         },
         {
           "name": "services"
+        }
+      ]
+    },
+    {
+      "name": "productPhotography",
+      "demoSections": [
+        {
+          "name": "productPhotographySeo"
+        },
+        {
+          "name": "productPhotographyBanner"
+        },
+        {
+          "name": "productPhotographyGalleryCTA"
+        },
+        {
+          "name": "productPhotographyProcess"
+        },
+        {
+          "name": "productPhotographyPricing"
         }
       ]
     },
@@ -485,6 +457,146 @@
         "service": {}
       },
       "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203380/services-min_v974jx.png"
+    },
+    {
+      "name": "productPhotographySeo",
+      "title": "Product Photography SEO",
+      "data": {
+        "pageTitle": "Product Photography  Photography | Jane Doe Photography",
+        "description": "Professional product photography  photography in New York.",
+        "shareImage": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      }
+    },
+    {
+      "name": "productPhotographyBanner",
+      "title": "Product Photography  Banner",
+      "description": "Product Photography services offered",
+      "data": {
+        "title": "Professional Product Photography",
+        "description": "Transform your products into compelling visual stories. Whether you're an e-commerce business, artisan creator, or retail brand, I specialize in creating stunning product imagery that captures attention and drives sales."
+      },
+      "templates": [
+        "banner1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "banner1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402523/product-banner-min_pf0c4a.png"
+    },
+    {
+      "name": "productPhotographyGalleryCTA",
+      "title": "Product Photography  CTA",
+      "description": "Product Photography  gallery CTA section",
+      "templates": [
+        "galleryCTA1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "galleryCTA1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402524/product-gallery-cta-min_xx6q2n.png",
+      "collections": {
+        "story": {
+          "config": {
+            "limit": 1,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Product Photography"
+              }
+            ],
+            "populate": [
+              {
+                "name": "photos",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "productPhotographyProcess",
+      "title": "Product Photography  Process",
+      "description": "Product Photography  services offered",
+      "data": {
+        "title": "The Product Photography Process",
+        "description": "From concept to final delivery, every step of your product photography session is carefully planned to showcase your items in their best light.",
+        "ctaText": "Book Your Product Session",
+        "ctaLink": "/contact"
+      },
+      "collections": {
+        "phase": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Product Photography"
+              }
+            ],
+            "populate": [
+              {
+                "name": "steps",
+                "type": "step"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "process1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "process1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402523/product-process-min_hdpqrm.png"
+    },
+    {
+      "name": "productPhotographyPricing",
+      "title": "Product Photography Packages",
+      "description": "Pricing section for product photography.",
+      "data": {
+        "title": "Product Photography Packages",
+        "description": "Choose the perfect package for your wedding needs. All packages include professional editing and high-resolution digital images."
+      },
+      "collections": {
+        "pricingPackage": {
+          "config": {
+            "limit": 3,
+            "filters": [
+              {
+                "field": "category",
+                "operator": "==",
+                "value": "Product Photography"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "pricing1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "pricing1"
+      },
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1743402523/product-pricing-min_xtgprk.png"
     },
     {
       "name": "weddingsSeo",
@@ -750,7 +862,7 @@
     {
       "name": "portraitsPricing",
       "title": "Portraits Pricing",
-      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "description": "Pricing section for portraits.",
       "data": {
         "title": "Portrait Session Packages",
         "description": "Choose the perfect package for your portrait needs. All packages include professional editing and high-resolution digital images."
@@ -781,7 +893,7 @@
     {
       "name": "weddingsPricing",
       "title": "Weddings Pricing",
-      "description": "Choose the package that best suits your needs. All packages include professional editing and a personal online gallery.",
+      "description": "Pricing section for weddings.",
       "data": {
         "title": "Wedding Session Packages",
         "description": "Choose the perfect package for your wedding needs. All packages include professional editing and high-resolution digital images."
@@ -925,7 +1037,7 @@
       "category": "banners",
       "namespace": "richjava_photography-shadcn",
       "description": "Introduction banner with title, subtitle, and description.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/weddings-banner-min_kna61p.png"
     },
     {
       "name": "galleryCTA1",
@@ -944,14 +1056,6 @@
       "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
     },
     {
-      "name": "portraits-pricing1",
-      "title": "Portraits Pricing 1",
-      "category": "pricing",
-      "namespace": "richjava_photography-shadcn",
-      "description": "Pricing packages display for portrait photography services.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202912/portraits-process_b3szlp.png"
-    },
-    {
       "name": "contactLanding1",
       "title": "Contact Landing 1",
       "category": "blocks",
@@ -965,7 +1069,7 @@
       "category": "blocks",
       "namespace": "richjava_photography-shadcn",
       "description": "Pricing packages display for services.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203386/portraits-pricing-min_qmuayl.png"
     },
     {
       "name": "projects",
@@ -1024,7 +1128,7 @@
       "category": "banners",
       "namespace": "richjava_photography-shadcn",
       "description": "Introduction banner with title, subtitle, and description.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203383/portraits-banner-min_xb5xea.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203379/weddings-banner-min_kna61p.png"
     },
     {
       "name": "galleryCTA1",
@@ -1043,14 +1147,6 @@
       "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202914/weddings-process_re1q4z.png"
     },
     {
-      "name": "portraits-pricing1",
-      "title": "Portraits Pricing 1",
-      "category": "pricing",
-      "namespace": "richjava_photography-shadcn",
-      "description": "Pricing packages display for portrait photography services.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742202912/portraits-process_b3szlp.png"
-    },
-    {
       "name": "contactLanding1",
       "title": "Contact Landing 1",
       "category": "blocks",
@@ -1064,7 +1160,7 @@
       "category": "blocks",
       "namespace": "richjava_photography-shadcn",
       "description": "Pricing packages display for services.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203382/weddings-pricing-min_fxye9r.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1742203386/portraits-pricing-min_qmuayl.png"
     },
     {
       "name": "projects",
@@ -1088,6 +1184,36 @@
   },
   "collections": {
     "phases": [
+      {
+        "_id": "product-phase-1",
+        "title": "Pre-Production",
+        "steps": [
+          "product-step-1",
+          "product-step-2",
+          "product-step-3"
+        ],
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-phase-2",
+        "title": "Production",
+        "steps": [
+          "product-step-4",
+          "product-step-5",
+          "product-step-6"
+        ],
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-phase-3",
+        "title": "Post-Production",
+        "steps": [
+          "product-step-7",
+          "product-step-8",
+          "product-step-9"
+        ],
+        "category": "Product Photography"
+      },
       {
         "_id": "wedding-phase-1",
         "title": "Before the Wedding",
@@ -1150,6 +1276,50 @@
       }
     ],
     "photos": [
+      {
+        "_id": "product-1",
+        "_type": "photo",
+        "title": "Product 1",
+        "description": "Description of product 1",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1627384113710-424c9181ebbb?auto=format&fit=crop&q=80"
+        },
+        "category": "Product Photography",
+        "slug": "product-1"
+      },
+      {
+        "_id": "product-2",
+        "_type": "photo",
+        "title": "Product 2",
+        "description": "Description of product 2",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80"
+        },
+        "category": "Product Photography",
+        "slug": "product-2"
+      },
+      {
+        "_id": "product-3",
+        "_type": "photo",
+        "title": "Product 3",
+        "description": "Description of product 3",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1491472253230-a044054ca35f?auto=format&fit=crop&q=80"
+        },
+        "category": "Product Photography",
+        "slug": "product-3"
+      },
+      {
+        "_id": "product-4",
+        "_type": "photo",
+        "title": "Product 4",
+        "description": "Description of product 4",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80d"
+        },
+        "category": "Product Photography",
+        "slug": "product-4"
+      },
       {
         "_id": "portrait-1",
         "_type": "photo",
@@ -1329,6 +1499,31 @@
     ],
     "pricingPackages": [
       {
+        "name": "Basic",
+        "slug": "product-essential",
+        "category": "Product Photography",
+        "price": "$499",
+        "features": [
+          "Up to 10 products",
+          "2 angles per product",
+          "Basic retouching",
+          "Web-ready files"
+        ]
+      },
+      {
+        "name": "Professional",
+        "slug": "product-premium",
+        "category": "Product Photography",
+        "price": "$999",
+        "isPopular": true,
+        "features": [
+          "Up to 20 products",
+          "4 angles per product",
+          "Advanced retouching",
+          "Web & print files"
+        ]
+      },
+      {
         "name": "Essential",
         "slug": "portraits-essential",
         "category": "Portraits",
@@ -1401,6 +1596,13 @@
     ],
     "primaryMenuItems": [
       {
+        "_id": "primary-menu-item-FT9nIrRRe6",
+        "_type": "primaryMenuItem",
+        "slug": "product-photography",
+        "label": "Product Photography",
+        "url": "/product-photography"
+      },
+      {
         "_id": "primary-menu-item-FT9nIrRRe7",
         "_type": "primaryMenuItem",
         "slug": "weddings",
@@ -1422,7 +1624,6 @@
         "slug": "projects"
       }
     ],
-    "processes": [],
     "profiles": [],
     "projects": [
       {
@@ -1509,6 +1710,69 @@
       }
     ],
     "steps": [
+      {
+        "_id": "product-step-1",
+        "icon": "message",
+        "title": "Initial Consultation",
+        "description": "We'll discuss your brand, target audience, and specific requirements to create images that align with your marketing goals.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-2",
+        "icon": "palette",
+        "title": "Creative Direction",
+        "description": "Development of mood boards, styling concepts, and shot lists to ensure we capture every essential detail.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-3",
+        "icon": "clock",
+        "title": "Setup Planning",
+        "description": "Preparation of lighting, backgrounds, and props to create the perfect environment for your products.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-4",
+        "icon": "camera",
+        "title": "Professional Setup",
+        "description": "State-of-the-art equipment and lighting to ensure the highest quality results.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-5",
+        "icon": "heart",
+        "title": "Attention to Detail",
+        "description": "Careful positioning and styling to highlight your product's best features.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-6",
+        "icon": "image",
+        "title": "Multiple Angles",
+        "description": "Comprehensive coverage ensuring every important aspect of your product is captured.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-7",
+        "icon": "image",
+        "title": "Image Selection",
+        "description": "Careful curation of the best shots that tell your product's story.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-8",
+        "icon": "heart",
+        "title": "Professional Editing",
+        "description": "Color correction, retouching, and background removal if needed.",
+        "category": "Product Photography"
+      },
+      {
+        "_id": "product-step-9",
+        "icon": "palette",
+        "title": "Final Delivery",
+        "description": "High-resolution images optimized for your specific needs, whether web or print.",
+        "category": "Product Photography"
+      },
       {
         "_id": "wedding-step-1",
         "icon": "message",
@@ -1637,6 +1901,19 @@
       }
     ],
     "stories": [
+      {
+        "title": "Luxury Timepieces",
+        "description": "Swiss watchmaker Chronos sought images that showcased the craftsmanship of their collection. Using macro photography and specialized lighting, we captured every fine detail, highlighting the precision and elegance of each timepiece.",
+        "category": "Product Photography",
+        "location": "",
+        "style": "Elegant & Refined",
+        "photos": [
+          "product-4",
+          "product-2",
+          "product-1",
+          "product-3"
+        ]
+      },
       {
         "title": "Sarah & Michael's Coastal Wedding",
         "description": "A breathtaking celebration at sunset, where modern elegance met coastal charm. The couple chose an intimate gathering of 80 guests, with a ceremony overlooking the Pacific Ocean. The day was filled with personal touches, from hand-written vows to a surprise performance by the bride for her groom.",

@@ -12,6 +12,16 @@
       ]
     },
     {
+      "name": "productPhotography",
+      "title": "Product Photography",
+      "description": "Product photography portfolio module",
+      "modulePages": [
+        {
+          "name": "productPhotographyBase"
+        }
+      ]
+    },
+    {
       "name": "weddings",
       "title": "Weddings",
       "description": "Weddings portfolio module",
