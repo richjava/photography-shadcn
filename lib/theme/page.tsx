@@ -4,8 +4,7 @@ import { useParams } from "next/navigation";
 import Layout from "@/components/layout";
 import { getComponents } from "@/lib/builtjs-utils";
 import { setupCrumbs } from "@/lib/theme/crumbs";
-// const { transformPage, fetchEntry, fetchEntries } = require("@builtjs/theme");
-import { transformPage, fetchEntry, fetchEntries } from '../../theme/index';
+const { transformPage, fetchEntry, fetchEntries } = require("@builtjs/theme");
 
 const Page = ({ config }: any) => {
   const router = useRouter();
