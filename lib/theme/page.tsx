@@ -6,7 +6,6 @@ import { getComponents } from "@/lib/builtjs-utils";
 import { setupCrumbs } from "@/lib/theme/crumbs";
 const { transformPage, fetchEntry, fetchEntries } = require("@builtjs/theme");
 
-
 const Page = ({ config }: any) => {
   const router = useRouter();
   const params = useParams();
