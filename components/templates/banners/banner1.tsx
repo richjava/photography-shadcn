@@ -19,11 +19,12 @@ export default function Banner1({ content }: BannerProps) {
   const title = data?.title || 'Capture Your Story';
   const description = data?.description || 'Whether you\'re planning your dream wedding or looking to create stunning portraits, I\'m here to help you preserve these precious moments.';
   const [isVisible, setIsVisible] = useState(false);
-  if (!data) return null;
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  if (!data) return null;
 
   return (
     <section id="banner1" className="relative px-8 py-24 bg-white">

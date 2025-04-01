@@ -25,13 +25,13 @@ interface ContactLandingProps {
 
 export default function ContactLanding1({ content }: ContactLandingProps) {
   const data = content?.data;
-  if (!data) return null;
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  if (!data) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

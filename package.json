@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others --prefix-colors \"cyan.bold,green.bold\" --prefix \"[next] ,[watch] \" \"NODE_ENV=development NEXT_WEBPACK_USEPOLLING=1 next dev\" \"node lib/theme/watch-data.js\"",
+    "dev": "concurrently --kill-others --prefix-colors \"cyan.bold,green.bold\" --prefix \"[next] ,[watch] \" \"NODE_ENV=development NEXT_WEBPACK_USEPOLLING=1 next dev\" \"ts-node lib/theme/watch-data.ts\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -67,6 +67,7 @@
     "react-dom": "^18.3.1",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

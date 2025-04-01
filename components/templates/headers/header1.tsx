@@ -29,6 +29,7 @@ interface HeaderProps {
   }
 
 export default function Header({ content }: { content?: HeaderProps }) {
+  console.log({content})
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -38,10 +39,7 @@ export default function Header({ content }: { content?: HeaderProps }) {
     }
     return pathname.startsWith(path);
   };
-  const menuItems = content?.collections?.primaryMenuItem || [
-    { label: 'Home', url: '/' },
-    { label: 'About', url: '/about' },
-  ];
+  const menuItems = content?.collections?.primaryMenuItem || [];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

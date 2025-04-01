@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const chokidar = require('chokidar');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-const dataDir = path.join(process.cwd(), 'public', 'data');
-const themeJsonPath = path.join(dataDir, 'theme.json');
-const builtDataPath = path.join(process.cwd(), '.built', 'data.json');
+interface ThemeJson {
+  plugins?: string[];
+}
+
+const dataDir: string = path.join(process.cwd(), 'public', 'data');
+const themeJsonPath: string = path.join(dataDir, 'theme.json');
+const builtDataPath: string = path.join(process.cwd(), '.built', 'data.json');
 
 console.log('=== Watch Data Script Starting ===');
 console.log('Data directory:', dataDir);
@@ -17,13 +22,14 @@ if (!fs.existsSync(dataDir)) {
   process.exit(1);
 }
 
-let previousPlugins = [];
-let updateTimeout = null;
-let isUpdating = false;
+let previousPlugins: string[] = [];
+let updateTimeout: NodeJS.Timeout | null = null;
+let isUpdating: boolean = false;
+let lastChangedFile: string = '';
 
-function getPluginsArray() {
+function getPluginsArray(): string[] {
   try {
-    const themeJson = require(themeJsonPath);
+    const themeJson: ThemeJson = require(themeJsonPath);
     return themeJson.plugins || [];
   } catch (error) {
     console.error('Error reading theme.json:', error);
@@ -31,7 +37,7 @@ function getPluginsArray() {
   }
 }
 
-function runUpdateCommand(includePlugins = false, retryCount = 0) {
+function runUpdateCommand(includePlugins: boolean = false, retryCount: number = 0): void {
   // If already updating, queue the next update
   if (isUpdating) {
     console.log('Update already in progress, will retry after current update completes');
@@ -55,7 +61,7 @@ function runUpdateCommand(includePlugins = false, retryCount = 0) {
         stdio: 'inherit'
       });
 
-      updateProcess.on('exit', (code) => {
+      updateProcess.on('exit', (code: number | null) => {
         if (code !== 0) {
           console.error(`Error running update command: ${code}`);
           isUpdating = false;
@@ -118,12 +124,12 @@ const dataWatcher = chokidar.watch(dataDir, {
 });
 
 dataWatcher
-  .on('change', filePath => {
+  .on('change', (filePath: string) => {
     console.log(`Detected change in ${filePath}...`);
     lastChangedFile = filePath;
     runUpdateCommand(false);
   })
-  .on('error', error => console.error(`Watcher error: ${error}`))
+  .on('error', (error: Error) => console.error(`Watcher error: ${error}`))
   .on('ready', () => {
     console.log('Watching for changes in:', dataDir);
   });
