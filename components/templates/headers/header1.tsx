@@ -29,7 +29,6 @@ interface HeaderProps {
   }
 
 export default function Header({ content }: { content?: HeaderProps }) {
-  console.log({content})
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
