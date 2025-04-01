@@ -22,7 +22,7 @@ interface Project {
   title: string;
   description: string;
   category: string;
-  coverPhoto: {
+  photo: {
     image: {
       url: string;
       alt: string;
@@ -67,7 +67,7 @@ export default function Projects({ content }: PricingProps) {
                 >
                   <div className="mb-4 overflow-hidden rounded-lg aspect-video">
                     <img
-                      src={project.coverPhoto?.image?.url}
+                      src={project.photo?.image?.url}
                       alt={project.title}
                       className="object-cover w-full h-full"
                     />

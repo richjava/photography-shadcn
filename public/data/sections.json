@@ -532,7 +532,7 @@
           "config": {
             "populate": [
               {
-                "name": "coverPhoto",
+                "name": "photo",
                 "type": "photo"
               },
               {
