@@ -27,7 +27,14 @@ interface PricingProps {
 
 export default function Pricing1({ content }: PricingProps) {
   const data = content?.data;
-  const packages = content?.collections?.pricingPackage || [];
+  const extractPrice = (price: string) => {
+    const numericValue = price.replace(/[^0-9.]/g, ""); // Keep only numbers & decimals
+    return parseFloat(numericValue) || 0; // Default to 0 if parsing fails
+  };
+  
+  const packages = (content?.collections?.pricingPackage || [])
+    .sort((a, b) => extractPrice(a.price) - extractPrice(b.price));
+    
   if (!data || packages.length === 0) return null;
 
   return (

@@ -6,34 +6,33 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import Logo from '@/components/shared/Logo';
+import Logo from "@/components/shared/Logo";
 
 interface HeaderProps {
-    data?: {
-      title?: string;
+  data?: {
+    title?: string;
+  };
+  global?: {
+    name?: string;
+    logo?: {
+      url: string;
+      width: number;
+      height: number;
     };
-    global?: {
-      name?: string;
-      logo?: {
-        url: string;
-        width: number;
-        height: number;
-      };
-    };
-    collections?: {
-      primaryMenuItem?: Array<{
-        label: string;
-        url: string;
-      }>;
-    };
-  }
+  };
+  collections?: {
+    primaryMenuItem?: Array<{
+      label: string;
+      url: string;
+    }>;
+  };
+}
 
 export default function Header({ content }: { content?: HeaderProps }) {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const isActive = (path: string) => {
-    if (path === '/') {
+    if (path === "/") {
       return pathname === path;
     }
     return pathname.startsWith(path);
@@ -44,12 +43,17 @@ export default function Header({ content }: { content?: HeaderProps }) {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="relative z-50 px-4 py-4 sm:px-8 sm:py-6 bg-black/90 backdrop-blur-sm">
         <nav className="flex items-center justify-between mx-auto max-w-7xl">
-          <Link href="/" className={cn(
-            "flex items-center space-x-3 transition-colors",
-            isActive('/') ? "text-white" : "text-gray-400 hover:text-white"
-          )}>
+          <Link
+            href="/"
+            className={cn(
+              "flex items-center space-x-3 transition-colors",
+              isActive("/") ? "text-white" : "text-gray-400 hover:text-white"
+            )}
+          >
             <Logo />
-            <span className="text-xl font-medium tracking-tight">Jane Doe Photography</span>
+            <span className="text-xl font-medium tracking-tight">
+              Jane Doe Photography
+            </span>
           </Link>
 
           {/* Desktop Menu */}
@@ -60,18 +64,20 @@ export default function Header({ content }: { content?: HeaderProps }) {
                 href={item.url}
                 className={cn(
                   "transition-colors text-lg tracking-tight",
-                  isActive(item.url) ? "text-white font-medium" : "text-gray-400 hover:text-white"
+                  isActive(item.url)
+                    ? "text-white font-medium"
+                    : "text-gray-400 hover:text-white"
                 )}
               >
                 {item.label}
               </Link>
             ))}
             <Link href="/contact">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className={cn(
                   "transition-colors text-lg px-8 py-6",
-                  isActive('/contact')
+                  isActive("/contact")
                     ? "bg-white text-black hover:bg-gray-100"
                     : "bg-transparent text-white border-white hover:bg-white hover:text-black"
                 )}
@@ -110,22 +116,21 @@ export default function Header({ content }: { content?: HeaderProps }) {
               href={item.url}
               className={cn(
                 "text-2xl tracking-tight transition-colors",
-                isActive(item.url) ? "text-white font-medium" : "text-gray-400 hover:text-white"
+                isActive(item.url)
+                  ? "text-white font-medium"
+                  : "text-gray-400 hover:text-white"
               )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Button 
-              variant="outline" 
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+              variant="outline"
               className={cn(
                 "text-xl px-8 py-6 mt-4",
-                isActive('/contact')
+                isActive("/contact")
                   ? "bg-white text-black hover:bg-gray-100"
                   : "bg-transparent text-white border-white hover:bg-white hover:text-black"
               )}

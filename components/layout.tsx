@@ -1,21 +1,29 @@
 // import-slot
 // end-import-slot
 
-import { ReactNode } from "react";
-import Header from "./templates/headers/header1";
-import Footer from "./templates/footers/footer1";
+const Layout = (props: any) => {
+  if (!props) return <></>;
+  const { children, layoutComps = [], page } = props;
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow">{children}</main>
-      <Footer />
+    // content-slot
+    <div>
+      {/* section-slot */}
+      {page &&
+        layoutComps.length > 0 &&
+        layoutComps.map((Section: any, i: number) => {
+          return (
+            <div key={i}>
+              <Section content={page.layout.sections[i].content} />
+              {i === page.layout.contentIndex - 1 && (
+                <main id="main">{children}</main>
+              )}
+            </div>
+          );
+        })}
+      {/* end-section-slot */}
     </div>
+    // end-content-slot
   );
 };
 
