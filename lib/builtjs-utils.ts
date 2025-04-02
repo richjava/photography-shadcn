@@ -25,9 +25,7 @@ export function getComponents(sections:any) {
     getComponentMap(sections).then((map:any) => {
       let comps = [];
       for (const key of Object.keys(map)) {
-        let comp = dynamic(() => map[key], {
-          suspense: false,
-        });
+        let comp = dynamic(() => map[key]);
         comps.push(comp);
       }
       resolve(comps);

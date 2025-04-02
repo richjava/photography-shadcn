@@ -34,20 +34,28 @@ export default function GalleryCTA({ content }: GalleryCTAProps) {
       style: "Wedding Style 1",
       photos: [
         {
-          url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-          alt: "Wedding Image 1",
+          image: {
+            url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
+            alt: "Wedding Image 1",
+          }
         },
         {
-          url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-          alt: "Wedding Image 2",
+          image: {
+            url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
+            alt: "Wedding Image 2",
+          }
         },
         {
-          url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-          alt: "Wedding Image 3",
+          image: {
+            url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
+            alt: "Wedding Image 3",
+          }
         },
         {
-          url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-          alt: "Wedding Image 4",
+          image: {
+            url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
+            alt: "Wedding Image 4",
+          }
         },
       ],
     },
@@ -64,13 +72,15 @@ export default function GalleryCTA({ content }: GalleryCTAProps) {
           <div className="space-y-8">
             {galleryPhotos.map((photo: Photo, index: number) => (
               <div key={index} className="overflow-hidden rounded-2xl">
-                <Image
-                  src={photo.image.url}
-                  alt={photo.image.alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                />
+                {photo.image && (
+                  <Image
+                    src={photo.image.url}
+                    alt={photo.image.alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto"
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -79,13 +89,15 @@ export default function GalleryCTA({ content }: GalleryCTAProps) {
           <div className="space-y-8">
             {/* Featured Story Image */}
             <div className="overflow-hidden rounded-2xl">
-              <Image
-                src={firstStory.photos[0].image.url}
-                alt={firstStory.photos[0].image.alt}
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
+              {firstStory.photos[0].image && (
+                <Image
+                  src={firstStory.photos[0].image.url}
+                  alt={firstStory.photos[0].image.alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+              )}
             </div>
 
             {/* Wedding Story Card */}

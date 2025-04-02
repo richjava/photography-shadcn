@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useParams } from "next/navigation";
 import Layout from "@/components/layout";
 import { getComponents } from "@/lib/builtjs-utils";
-import { setupCrumbs } from "@/lib/theme/crumbs";
 const { transformPage, fetchEntry, fetchEntries } = require("@builtjs/theme");
 
 const Page = ({ config }: any) => {
@@ -12,12 +11,11 @@ const Page = ({ config }: any) => {
   const [page, setPage] = useState<any>(null);
   const [sectionComps, setSectionComps] = useState<React.ComponentType[]>([]);
   const [layoutComps, setLayoutComps] = useState<React.ComponentType[]>([]);
-  const hasSetUpCrumbs = useRef(false);
+  const hasSetUp = useRef(false);
 
   useEffect(() => {
-    if (!hasSetUpCrumbs.current) {
-      setupCrumbs(router);
-      hasSetUpCrumbs.current = true;
+    if (!hasSetUp.current) {
+      hasSetUp.current = true;
       setPage(null);
       setLayoutComps([]);
       init();

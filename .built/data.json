@@ -67,7 +67,7 @@
           "relation": "oneToMany",
           "target": "photo"
         },
-        "coverPhoto": {
+        "photo": {
           "type": "relation",
           "relation": "oneToOne",
           "target": "photo"
@@ -974,7 +974,7 @@
           "config": {
             "populate": [
               {
-                "name": "coverPhoto",
+                "name": "photo",
                 "type": "photo"
               },
               {
@@ -1633,7 +1633,7 @@
         "description": "Exploring the interplay of natural light and human expression in various outdoor settings.",
         "slug": "natural-light-portraits",
         "category": "Portrait Series",
-        "coverPhoto": "portrait-1",
+        "photo": "portrait-1",
         "photos": [
           "portrait-1",
           "portrait-2",
@@ -1648,7 +1648,7 @@
         "description": "A journey through the hidden corners of the city, capturing the untold stories of urban life.",
         "category": "Street Photography",
         "slug": "urban-exploration",
-        "coverPhoto": "street-1",
+        "photo": "street-1",
         "photos": [
           "street-1",
           "street-2",
@@ -1663,7 +1663,7 @@
         "description": "A study of clean lines and geometric patterns in modern architectural design.",
         "category": "Architecture",
         "slug": "minimalist-architecture",
-        "coverPhoto": "architecture-1",
+        "photo": "architecture-1",
         "photos": [
           "architecture-1",
           "architecture-2",
@@ -1677,7 +1677,7 @@
         "description": "A collection of landscapes from Wellington, New Zealand.",
         "category": "Landscapes",
         "slug": "wellington-landscapes",
-        "coverPhoto": "landscape-1",
+        "photo": "landscape-1",
         "photos": [
           "landscape-1"
         ]
